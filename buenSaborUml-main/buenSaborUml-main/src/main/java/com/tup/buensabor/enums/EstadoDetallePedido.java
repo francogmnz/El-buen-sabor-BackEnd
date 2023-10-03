@@ -1,8 +1,7 @@
-package com.example.TrabajoPracticiBack.enums;
-
+package com.tup.buensabor.enums;
 public enum EstadoDetallePedido {
-    PENDIENTE DE PREPARACION,
-    EN PREPARACION,
+    PENDIENTE_DE_PREPARACION,
+    EN_PREPARACION,
     PREPARADO,
     CANCELADO
     }
