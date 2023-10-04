@@ -29,7 +29,7 @@ public class OrdenCompra extends Base{
     private int numOrdenCompra;
 
     @NotNull
-    @OneToMany(mappedBy = "DetalleOrdenCompra")
+    @OneToMany
     @JoinColumn(name = "detalleOrdenCompra")
     private List<DetalleOrdenCompra> detalleOrdenCompra;
 }
