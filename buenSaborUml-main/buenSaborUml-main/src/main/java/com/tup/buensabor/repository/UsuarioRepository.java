@@ -1,0 +1,8 @@
+package com.tup.buensabor.repository;
+
+import com.tup.buensabor.entities.Usuario;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
+    // Puedes agregar métodos personalizados relacionados con Usuario si es necesario
+}
