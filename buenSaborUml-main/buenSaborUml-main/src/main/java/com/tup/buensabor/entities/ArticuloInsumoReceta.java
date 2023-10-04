@@ -20,10 +20,9 @@ public class ArticuloInsumoReceta extends Base{
     @Column(name = "cantidadAIR")
     private int cantidadAIR;
 
-    //@ManyToOne()
-    //@JoinColumn(name = "id_receta")
-    //private Receta receta;
-    //decomentar cuando el pana cree receta
+    @ManyToOne()
+    @JoinColumn(name = "id_receta")
+    private Receta receta;
 
     @ManyToOne()
     @JoinColumn(name = "id_articulo_insumo")
