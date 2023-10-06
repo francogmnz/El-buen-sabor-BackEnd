@@ -40,11 +40,6 @@ public class Domicilio extends Base {
     private Integer pisoDpto;
 
     @NotNull
-    @ManyToOne()
-    @JoinColumn(name = "id_cliente")
-    private Cliente cliente;
-
-    @NotNull
     @Column(name = "fecha_alta")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaAlta;

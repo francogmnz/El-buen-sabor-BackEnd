@@ -28,6 +28,10 @@ public class Cliente extends Base {
     @JoinColumn(name = "id_usuario")
     private Usuario usuario;
 
+    @OneToMany()
+    @JoinColumn(name = "id_domicilio")
+    private Domicilio domicilio;
+
     @Column(name = "fecha_alta")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaAlta;
@@ -39,5 +43,6 @@ public class Cliente extends Base {
     @Column(name = "fecha_baja")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaBaja;
+
 
 }

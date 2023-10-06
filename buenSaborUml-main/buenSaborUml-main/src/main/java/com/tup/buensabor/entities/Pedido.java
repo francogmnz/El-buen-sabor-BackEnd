@@ -13,6 +13,7 @@ import org.antlr.v4.runtime.misc.NotNull;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "pedido")
@@ -55,13 +56,18 @@ public class Pedido extends Base {
     private FormaPago formaPago;
 
     @ManyToOne()
-    @JoinColumn(name = "id_domicilio_entrega")
-    private Domicilio domicilioEntrega;
+    @JoinColumn(name = "id_domicilio")
+    private Domicilio domicilio;
 
     @NotNull
     @ManyToOne()
     @JoinColumn(name = "id_cliente")
     private Cliente cliente;
+
+    @NotNull
+    @OneToMany
+    @JoinColumn(name="id_detalle_dedido")
+    private List<DetallePedido> detallePedido;
 
     @NotNull
     @Column(name = "fecha_alta")

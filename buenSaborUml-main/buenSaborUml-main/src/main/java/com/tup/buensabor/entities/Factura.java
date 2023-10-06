@@ -11,6 +11,7 @@ import org.antlr.v4.runtime.misc.NotNull;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "factura")
@@ -57,9 +58,13 @@ public class Factura extends Base {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaBaja;
 
-    @NotNull
     @OneToOne
-    @JoinColumn(name = "id_pedido")
-    private Pedido pedido;
+    @JoinColumn(name = "id_nota_credito")
+    private NotaCredito notaCredito;
+
+    @NotNull
+    @OneToMany
+    @JoinColumn(name="id_detalle_factura")
+    private List<DetalleFactura> detalleFactura;
 
 }

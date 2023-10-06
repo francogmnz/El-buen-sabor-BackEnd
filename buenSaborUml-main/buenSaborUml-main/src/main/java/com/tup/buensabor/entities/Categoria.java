@@ -19,6 +19,5 @@ import java.util.Date;
 public class Categoria extends Base{
     private String descripcionCategoria;
     private Date fechaHoraBaja;
-    private int idCategoria;
     private String nombreCategoria;
 }

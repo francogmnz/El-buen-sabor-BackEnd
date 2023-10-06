@@ -1,36 +1,24 @@
 package com.tup.buensabor.entities;
 
 import jakarta.persistence.*;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.antlr.v4.runtime.misc.NotNull;
 
-import java.math.BigDecimal;
-
 @Entity
-@Table(name = "detalle_factura")
+@Table(name = "ingrediente_receta")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class DetalleFactura extends Base {
-
+public class IngredienteReceta extends Base{
     @NotNull
-    private Integer cantidad;
-
-    @NotNull
-    @Column(name = "subtotal", precision = 10, scale = 2)
-    private BigDecimal subtotal;
+    @Column(name = "cantidadIR")
+    private int cantidadIR;
 
     @ManyToOne()
     @JoinColumn(name = "id_ingrediente")
     private Ingrediente ingrediente;
-
-    @ManyToOne()
-    @JoinColumn(name = "id_producto")
-    private Producto producto;
-
 }

@@ -12,12 +12,12 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
-@Table(name = "articulo_insumo")
+@Table(name = "Ingrediente")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class ArticuloInsumo extends Base {
+public class Ingrediente extends Base {
 
     @NotNull
     private String denominacion;

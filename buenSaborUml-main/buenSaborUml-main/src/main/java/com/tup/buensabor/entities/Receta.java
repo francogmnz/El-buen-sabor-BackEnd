@@ -44,4 +44,8 @@ public class Receta extends Base{
     @Column(name = "fecha_alta")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaAltaReceta;
+
+    @ManyToOne()
+    @JoinColumn(name = "id_ingrediente_receta")
+    private IngredienteReceta ingredienteReceta;
 }

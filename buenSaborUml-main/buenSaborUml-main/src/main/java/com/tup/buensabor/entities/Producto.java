@@ -7,15 +7,16 @@ import org.antlr.v4.runtime.misc.NotNull;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 @Entity
-@Table(name = "articulo_manufacturado")
+@Table(name = "Producto")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @ToString
-public class ArticuloManufacturado extends Base {
+public class Producto extends Base {
 
     @NotNull
     private String denominacion;
@@ -50,5 +51,18 @@ public class ArticuloManufacturado extends Base {
     @Column(name = "fecha_baja")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaBaja;
+
+    @ManyToOne()
+    @JoinColumn(name = "id_receta")
+    private Receta receta;
+
+    @ManyToOne()
+    @JoinColumn(name = "id_categoria")
+    private Categoria categoria;
+
+    @NotNull
+    @OneToMany
+    @JoinColumn(name = "detalleProducto")
+    private List<DetalleProducto> detalleproducto;
 
 }
