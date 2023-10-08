@@ -1,8 +1,8 @@
 package com.tup.buensabor.repository;
 
-import com.tup.buensabor.entities.ArticuloManufacturado;
+import com.tup.buensabor.entities.Ingrediente;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ArticuloManufacturadoRepository extends JpaRepository<ArticuloManufacturado, Long> {
+public interface ProductoRepository extends JpaRepository<Ingrediente, Long> {
     // Puedes agregar métodos personalizados relacionados con ArticuloManufacturado si es necesario
 }

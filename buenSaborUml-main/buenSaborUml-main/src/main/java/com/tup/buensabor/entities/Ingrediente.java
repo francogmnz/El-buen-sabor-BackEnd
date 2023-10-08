@@ -15,7 +15,7 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-public class ArticuloManufacturado extends Base {
+public class Ingrediente extends Base {
 
     @NotNull
     private String denominacion;

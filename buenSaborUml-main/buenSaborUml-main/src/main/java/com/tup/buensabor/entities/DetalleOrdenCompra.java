@@ -26,7 +26,7 @@ public class DetalleOrdenCompra extends Base{
 
     @ManyToOne()
     @JoinColumn(name = "id_articulo_insumo")
-    private ArticuloInsumo articuloInsumo;
+    private Producto producto;
 
     @ManyToOne()
     @JoinColumn(name = "id_unidad_medida")

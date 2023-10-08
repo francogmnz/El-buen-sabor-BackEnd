@@ -17,7 +17,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Getter
 @Setter
-public class ArticuloInsumo extends Base {
+public class Producto extends Base {
 
     @NotNull
     private String denominacion;
@@ -59,5 +59,10 @@ public class ArticuloInsumo extends Base {
     @Column(name = "fecha_baja")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaBaja;
+
+    @NotNull
+    @ManyToOne()
+    @JoinColumn(name = "id_categoria")
+    private Categoria categoria;
 
 }
