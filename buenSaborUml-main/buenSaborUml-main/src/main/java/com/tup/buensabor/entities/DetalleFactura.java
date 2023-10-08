@@ -19,7 +19,7 @@ import java.math.BigDecimal;
 public class DetalleFactura extends Base {
 
     @NotNull
-    private Integer cantidad;
+    private Integer   cantidad;
 
     @NotNull
     @Column(name = "subtotal", precision = 10, scale = 2)
