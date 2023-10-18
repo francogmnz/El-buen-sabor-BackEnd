@@ -45,7 +45,7 @@ public class Ingrediente extends Base {
     @NotNull
     @ManyToOne()
     @JoinColumn(name = "id_rubro_articulo")
-    private RubroArticulo rubroArticulo;
+    private RubroIngrediente rubroIngrediente;
 
     @NotNull
     @Column(name = "fecha_alta")
