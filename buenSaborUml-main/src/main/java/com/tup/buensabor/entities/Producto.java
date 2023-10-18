@@ -52,7 +52,7 @@ public class Producto extends Base {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaBaja;
 
-    @ManyToOne()
+    @OneToOne()
     @JoinColumn(name = "id_receta")
     private Receta receta;
 

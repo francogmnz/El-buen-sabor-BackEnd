@@ -21,17 +21,13 @@ public class NotaCredito extends Base {
     @NotNull
     @Column(name = "Fecha_Nota_Credito")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date fechaNotaDeCredito;
+    private Date fechaNotaCredito;
 
     @Column(name = "Importe")
-    private double importeNDC;
+    private double importeNC;
 
     @Column(name = "Descripción")
-    private String descripcionNDC;
+    private String descripcionNC;
 
-    @NotNull
-    @OneToOne
-    @JoinColumn(name = "id_factura")
-    private Factura factura;
 
 }

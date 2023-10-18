@@ -27,5 +27,10 @@ public class DetalleProducto extends Base {
     @JoinColumn(name = "id_ingrediente")
     private Ingrediente ingrediente;
 
+    @NotNull
+    @ManyToOne()
+    @JoinColumn(name = "id_producto")
+    private Producto producto;
+
 
 }
