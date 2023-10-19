@@ -1,0 +1,7 @@
+package com.example.demo.repository;
+import com.example.demo.entities.IngredienteReceta;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ArticuloInsumoRecetaRepository extends JpaRepository<IngredienteReceta, Long> {
+    // Puedes agregar métodos personalizados relacionados con ArticuloInsumoReceta si es necesario
+}
