@@ -57,7 +57,7 @@ public class Producto extends Base {
 
     @ManyToOne()
     @JoinColumn(name = "id_categoria")
-    private Categoria categoria;
+    private RubroProducto rubroProducto;
 
     @NotNull
     @OneToMany
