@@ -1,8 +1,8 @@
 package com.example.demo.repository;
 
-import com.example.demo.entities.RubroProducto;
+import com.example.demo.entities.RubroIngrediente;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface RubroProductoRepository extends JpaRepository<RubroProducto, Long> {
-    // Puedes agregar métodos personalizados relacionados con Categoria si es necesario
+public interface RubroProductoRepository extends JpaRepository<RubroIngrediente, Long> {
+    // Puedes agregar métodos personalizados relacionados con RubroArticulo si es necesario
 }
