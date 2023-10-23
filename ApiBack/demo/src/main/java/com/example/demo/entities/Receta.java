@@ -37,7 +37,7 @@ public class Receta extends Base{
     @Temporal(TemporalType.TIMESTAMP)
     private double duracionreceta;
 
-    @ManyToOne()
+    @ManyToOne(optional = false)
     @JoinColumn(name = "id_ingrediente_receta")
     private IngredienteReceta ingredienteReceta;
 }
