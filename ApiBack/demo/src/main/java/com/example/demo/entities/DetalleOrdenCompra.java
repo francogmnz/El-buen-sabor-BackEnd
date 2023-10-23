@@ -24,12 +24,9 @@ public class DetalleOrdenCompra extends Base{
     @NotNull
     private Double precioUnitarioDetalleCompra;
 
-    @ManyToOne()
+    @ManyToOne(optional = false)
     @JoinColumn(name = "id_ingrediente")
     private Ingrediente ingrediente;
 
-    @ManyToOne()
-    @JoinColumn(name = "id_unidad_medida")
-    private UnidadMedida unidadMedida;
 
 }

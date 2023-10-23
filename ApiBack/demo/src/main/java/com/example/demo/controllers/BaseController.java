@@ -9,11 +9,9 @@ import java.io.Serializable;
 
 public interface BaseController<E extends Base, ID extends Serializable> {
 
-    @GetMapping("")
+    @GetMapping("") //el ? significa que le pasamos como un comodin de un objeto
     public ResponseEntity<?> getAll();
     public ResponseEntity<?> getAll(Pageable pageable);
-
-
     @GetMapping("/{id}")
     public ResponseEntity<?> getOne(@PathVariable ID id);
     @PostMapping("")
