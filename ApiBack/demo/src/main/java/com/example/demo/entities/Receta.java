@@ -37,14 +37,6 @@ public class Receta extends Base{
     @Temporal(TemporalType.TIMESTAMP)
     private double duracionreceta;
 
-    @Column(name = "fecha_baja")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date fechaBajaReceta;
-
-    @Column(name = "fecha_alta")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date fechaAltaReceta;
-
     @ManyToOne()
     @JoinColumn(name = "id_ingrediente_receta")
     private IngredienteReceta ingredienteReceta;
