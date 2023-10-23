@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 public abstract class BaseControllerImpl<E extends Base, S extends BaseServiceImpl<E,Long>> implements BaseController<E, Long> {
     @Autowired
     protected S servicio;
-
+//implementacion de todos los metodos que tengo en la interfaz BaseController
     @GetMapping("")
     public ResponseEntity<?> getAll(){
         try{

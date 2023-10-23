@@ -1,16 +1,18 @@
 package com.example.demo.services;
 
+
 import com.example.demo.entities.Base;
 import com.example.demo.repository.BaseRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.yaml.snakeyaml.events.Event;
 
 import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 
-public class BaseServiceImpl<E extends Base, ID extends Serializable> implements BaseService<E, ID> {
+public abstract class BaseServiceImpl<E extends Base, ID extends Serializable> implements BaseService<E, ID> {
 
     protected BaseRepository<E, ID> baseRepository;
 
@@ -28,9 +30,9 @@ public class BaseServiceImpl<E extends Base, ID extends Serializable> implements
             throw new Exception(e.getMessage());
         }
     }
-    @Override
-    @Transactional
-    public Page<E> findAll(Pageable pageable) throws Exception { try {
+  @Override
+  @Transactional
+  public Page<E> findAll(Pageable pageable) throws Exception { try {
         Page<E> entities = baseRepository.findAll(pageable);
         return entities;
     } catch (Exception e) {
@@ -86,4 +88,5 @@ public class BaseServiceImpl<E extends Base, ID extends Serializable> implements
             throw new Exception(e.getMessage());
         }
     }
+
 }
