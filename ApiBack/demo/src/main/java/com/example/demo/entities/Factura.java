@@ -45,23 +45,6 @@ public class Factura extends Comprobante {
     private BigDecimal totalVenta;
 
     @NotNull
-    @Column(name = "fecha_alta")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date fechaAlta;
-
-    @Column(name = "fecha_modificacion")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date fechaModificacion;
-
-    @Column(name = "fecha_baja")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date fechaBaja;
-
-    @OneToOne
-    @JoinColumn(name = "id_nota_credito")
-    private NotaCredito notaCredito;
-
-    @NotNull
     @OneToMany
     @JoinColumn(name="id_detalle_factura")
     private List<DetalleFactura> detalleFactura;
