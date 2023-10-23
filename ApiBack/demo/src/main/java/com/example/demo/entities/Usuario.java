@@ -24,5 +24,5 @@ public class Usuario extends Base {
     @NotNull
     @Column(name = "username", nullable = false)
     private String username;
-
+    
 }

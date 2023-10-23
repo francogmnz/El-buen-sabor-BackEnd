@@ -15,7 +15,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Getter
 @Setter
-public class NotaCredito extends Comprobante {
+public class NotaCredito extends Comprobante  {
 
     @NotNull
     @Column(name = "Fecha_Nota_Credito")

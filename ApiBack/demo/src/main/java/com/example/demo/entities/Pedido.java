@@ -60,14 +60,13 @@ public class Pedido extends Base {
     private Domicilio domicilio;
 
     @NotNull
-    @ManyToOne()
-    @JoinColumn(name = "id_cliente")
-    private Cliente cliente;
-
-    @NotNull
     @OneToMany
     @JoinColumn(name="id_detalle_dedido")
     private List<DetallePedido> detallePedido;
+
+    @ManyToOne
+    @JoinColumn(name = "id_comprobante")
+    private Comprobante comprobante;
 
 
 }

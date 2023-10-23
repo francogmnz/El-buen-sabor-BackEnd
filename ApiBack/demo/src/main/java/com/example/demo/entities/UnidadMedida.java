@@ -25,4 +25,5 @@ public class UnidadMedida extends Base {
     @Column(length = 25)
     private String abreviatura;
 
+
 }

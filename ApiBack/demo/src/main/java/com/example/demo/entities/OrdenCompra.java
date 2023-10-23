@@ -16,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
-public class OrdenCompra extends Base{
+public class OrdenCompra extends Comprobante{
 
     @NotNull
     @Temporal(TemporalType.TIMESTAMP)
