@@ -28,7 +28,7 @@ public class Cliente extends Base {
     @JoinColumn(name = "id_usuario")
     private Usuario usuario;
 
-    @OneToMany()
+    @ManyToOne
     @JoinColumn(name = "id_domicilio")
     private Domicilio domicilio;
 
