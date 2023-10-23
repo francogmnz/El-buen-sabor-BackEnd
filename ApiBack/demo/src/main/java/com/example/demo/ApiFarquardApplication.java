@@ -29,10 +29,9 @@ public class ApiFarquardApplication {
 			for (int i = 0; i < 5; i++) {
 				Factura factura = new Factura();
 				factura.setFechaFacturacion(new Date());
-				factura.setMpPaymentId("Forma de pago" + i); // Asegúrate de que estés proporcionando un valor válido para mpPaymentId
-				// Resto de configuración de la factura
 			}
 
-		}
+		};
 
+	}
 }

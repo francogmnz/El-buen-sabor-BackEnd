@@ -46,9 +46,5 @@ public class Producto extends Base {
     @JoinColumn(name = "id_categoria")
     private Categoria categoria;
 
-    @NotNull
-    @OneToMany
-    @JoinColumn(name = "detalleProducto")
-    private List<DetalleProducto> detalleproducto;
 
 }

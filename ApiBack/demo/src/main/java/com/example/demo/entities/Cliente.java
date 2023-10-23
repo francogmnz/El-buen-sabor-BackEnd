@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
-
 @Entity
 @Table(name = "cliente")
 @NoArgsConstructor
@@ -28,9 +27,8 @@ public class Cliente extends Base {
     @JoinColumn(name = "id_usuario")
     private Usuario usuario;
 
-    @OneToMany()
+    @OneToOne  // Cambio @OneToMany a @OneToOne
     @JoinColumn(name = "id_domicilio")
     private Domicilio domicilio;
-
 
 }
