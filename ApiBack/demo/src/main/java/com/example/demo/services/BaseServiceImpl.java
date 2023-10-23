@@ -12,7 +12,7 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 
-public abstract class BaseServiceImpl<E extends Base, ID extends Serializable> implements com.example.demo.services.BaseService<E, ID> {
+public abstract class BaseServiceImpl<E extends Base, ID extends Serializable> implements BaseService<E, ID> {
 
     protected BaseRepository<E, ID> baseRepository;
 
@@ -30,9 +30,9 @@ public abstract class BaseServiceImpl<E extends Base, ID extends Serializable> i
             throw new Exception(e.getMessage());
         }
     }
-    @Override
-    @Transactional
-    public Page<E> findAll(Pageable pageable) throws Exception { try {
+  @Override
+  @Transactional
+  public Page<E> findAll(Pageable pageable) throws Exception { try {
         Page<E> entities = baseRepository.findAll(pageable);
         return entities;
     } catch (Exception e) {
