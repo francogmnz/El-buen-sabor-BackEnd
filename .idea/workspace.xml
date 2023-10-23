@@ -5,23 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a8de996-b7e1-4c9e-bb7f-f27aff0d507d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/El-buen-sabor-BackEnd.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ApiBack/demo/src/main/java/com/example/demo/controllers/ComprobanteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ApiBack/demo/src/main/java/com/example/demo/controllers/IngredienteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ApiBack/demo/src/main/java/com/example/demo/controllers/LocalidadController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ApiBack/demo/src/main/java/com/example/demo/repository/IngredienteRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ApiBack/demo/src/main/java/com/example/demo/repository/LocalidadRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ApiBack/demo/src/main/java/com/example/demo/services/IngredienteService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ApiBack/demo/src/main/java/com/example/demo/services/IngredienteServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ApiBack/demo/src/main/java/com/example/demo/services/LocalidadService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ApiBack/demo/src/main/java/com/example/demo/services/LocalidadServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiagramaDeClasesTerminado.ldb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiBack/demo/src/main/java/com/example/demo/entities/Comprobante.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiBack/demo/src/main/java/com/example/demo/entities/Comprobante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiBack/demo/src/main/java/com/example/demo/service/BaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiBack/demo/src/main/java/com/example/demo/services/BaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiBack/demo/src/main/java/com/example/demo/service/BaseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiBack/demo/src/main/java/com/example/demo/services/BaseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiagramaDeClasesTerminado.ldb" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,9 +72,9 @@
       <recent name="C:\Users\Franco\Documents\UTN\3ro\Desarrollo de software\BACKEND PROYECTO\El-buen-sabor-BackEnd\ApiBack\demo\src\main\java\com\example\demo\controllers" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.example.demo.controllers" />
       <recent name="com.example.demo.services" />
       <recent name="com.example.demo.repository" />
+      <recent name="com.example.demo.controllers" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
