@@ -41,8 +41,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -72,9 +72,14 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Franco/Documents/UTN/3ro/Desarrollo de software/back/tpBackApi"
+    "last_opened_file_path": "C:/Users/Franco/Documents/UTN/3ro/Desarrollo de software/BACKEND PROYECTO/El-buen-sabor-BackEnd/ApiBack/demo/src/main/java/com/example/demo/controllers"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Franco\Documents\UTN\3ro\Desarrollo de software\BACKEND PROYECTO\El-buen-sabor-BackEnd\ApiBack\demo\src\main\java\com\example\demo\controllers" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
