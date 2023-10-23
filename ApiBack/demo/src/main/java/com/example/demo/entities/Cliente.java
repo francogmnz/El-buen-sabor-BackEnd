@@ -6,7 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "cliente")
@@ -28,8 +30,11 @@ public class Cliente extends Base {
     @JoinColumn(name = "id_usuario")
     private Usuario usuario;
 
-    @ManyToOne
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "id_domicilio")
-    private Domicilio domicilio;
+    private List<Domicilio> domicilio = new ArrayList<Domicilio>();
+    @OneToMany (cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn (name = "id-pedido")
+    private List<Pedido> pedido= new ArrayList<Pedido>();
 
 }

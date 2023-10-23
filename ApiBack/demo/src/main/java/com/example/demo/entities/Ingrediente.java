@@ -37,12 +37,12 @@ public class Ingrediente extends Base {
     private BigDecimal stockMinimo;
 
     @NotNull
-    @ManyToOne()
+    @ManyToOne(optional = false)
     @JoinColumn(name = "id_unidad_medida")
     private UnidadMedida unidadMedida;
 
     @NotNull
-    @ManyToOne()
+    @ManyToOne(optional = false)
     @JoinColumn(name = "id_rubro_articulo")
     private RubroIngrediente rubroIngrediente;
 

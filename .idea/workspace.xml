@@ -4,7 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a8de996-b7e1-4c9e-bb7f-f27aff0d507d" name="Changes" comment="" />
+    <list default="true" id="9a8de996-b7e1-4c9e-bb7f-f27aff0d507d" name="Changes" comment="">
+<<<<<<< Updated upstream
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/El-buen-sabor-BackEnd.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApiBack/demo/src/main/java/com/example/demo/services/BaseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/probandocomandos.txt" beforeDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_10_2023_14_43__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_10_2023_14_43__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_10_2023_14_43__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_10_2023_14_43__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiBack/demo/src/main/java/com/example/demo/controllers/DetalleFacturaControllers.java" beforeDir="false" />
+>>>>>>> Stashed changes
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,9 +40,6 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <task path="$PROJECT_DIR$/buenSaborUml-main/buenSaborUml-main">
-          <activation />
-        </task>
         <projects_view>
           <tree_state>
             <expand />
@@ -63,9 +82,15 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "android.gradle.sync.needed": "true",
+    "git-widget-placeholder": "ramaLu",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Usuario/Documents/GitHub/El-buen-sabor-BackEnd/ApiBack"
+<<<<<<< Updated upstream
+    "last_opened_file_path": "C:/Users/Franco/Documents/UTN/3ro/Desarrollo de software/BACKEND PROYECTO/El-buen-sabor-BackEnd/ApiBack/demo/src/main/java/com/example/demo/controllers"
+=======
+    "last_opened_file_path": "C:/Users/Franco/Documents/UTN/3ro/Desarrollo de software/back/tpBackApi",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+>>>>>>> Stashed changes
   }
 }]]></component>
   <component name="RecentsManager">
