@@ -59,14 +59,14 @@ public class Pedido extends Base {
     @JoinColumn(name = "id_domicilio")
     private Domicilio domicilio;
 
-
     @NotNull
-    @OneToMany (cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany
     @JoinColumn(name="id_detalle_dedido")
     private List<DetallePedido> detallePedido;
 
-    @ManyToOne(optional = false)
-    @JoinColumn (name = "id-comprobante")
+    @ManyToOne
+    @JoinColumn(name = "id_comprobante")
     private Comprobante comprobante;
+
 
 }
