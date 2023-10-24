@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.007s</div>
+<div class="counter">0.102s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,7 +79,7 @@
 <a name="contextLoads()"></a>
 <h3 class="failures">contextLoads()</h3>
 <span class="code">
-<pre>java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@4ee80a94 testClass = com.example.demo.ApiFarquardApplicationTests, locations = [], classes = [com.example.demo.ApiFarquardApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceLocations = [], propertySourceProperties = [&quot;org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true&quot;], contextCustomizers = [org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@1f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizer@fc258b1, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@acdb094, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@7216fb24, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@ebb6851, org.springframework.boot.test.context.SpringBootTestAnnotation@eb30e6db], resourceBasePath = &quot;src/main/webapp&quot;, contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
+<pre>java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@6f2b608e testClass = com.example.demo.ApiFarquardApplicationTests, locations = [], classes = [com.example.demo.ApiFarquardApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceLocations = [], propertySourceProperties = [&quot;org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true&quot;], contextCustomizers = [org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@1f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizer@fc258b1, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@acdb094, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@7216fb24, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@ebb6851, org.springframework.boot.test.context.SpringBootTestAnnotation@eb30e6db], resourceBasePath = &quot;src/main/webapp&quot;, contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:143)
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:127)
 	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:191)
@@ -234,7 +234,7 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 </thead>
 <tr>
 <td class="failures">contextLoads()</td>
-<td class="failures">0.007s</td>
+<td class="failures">0.102s</td>
 <td class="failures">failed</td>
 </tr>
 </table>
@@ -242,8 +242,8 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 <div id="tab2" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>12:04:24.708 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.demo.ApiFarquardApplicationTests]: ApiFarquardApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-12:04:24.811 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.demo.ApiFarquardApplication for test class com.example.demo.ApiFarquardApplicationTests
+<pre>12:11:56.368 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.demo.ApiFarquardApplicationTests]: ApiFarquardApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:11:56.541 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.demo.ApiFarquardApplication for test class com.example.demo.ApiFarquardApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -253,21 +253,21 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.1.4)
 
-2023-10-24T12:04:25.254-03:00  INFO 14936 --- [    Test worker] c.e.demo.ApiFarquardApplicationTests     : Starting ApiFarquardApplicationTests using Java 17.0.8 with PID 14936 (started by Franco in C:\Users\Franco\Documents\UTN\3ro\Desarrollo de software\BACKEND PROYECTO\El-buen-sabor-BackEnd\ApiBack\demo)
-2023-10-24T12:04:25.256-03:00  INFO 14936 --- [    Test worker] c.e.demo.ApiFarquardApplicationTests     : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2023-10-24T12:04:26.253-03:00  INFO 14936 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-10-24T12:04:26.412-03:00  INFO 14936 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 146 ms. Found 19 JPA repository interfaces.
-2023-10-24T12:04:27.051-03:00  INFO 14936 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-10-24T12:04:27.139-03:00  INFO 14936 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.9.Final
-2023-10-24T12:04:27.142-03:00  INFO 14936 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-10-24T12:04:27.338-03:00  INFO 14936 --- [    Test worker] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
-2023-10-24T12:04:27.365-03:00  INFO 14936 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-10-24T12:04:27.545-03:00  INFO 14936 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-10-24T12:04:27.569-03:00  INFO 14936 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-10-24T12:04:27.778-03:00  INFO 14936 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:./betodb user=SA
-2023-10-24T12:04:27.780-03:00  INFO 14936 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-10-24T12:04:28.210-03:00  INFO 14936 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-10-24T12:04:29.165-03:00  INFO 14936 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-24T12:11:57.193-03:00  INFO 636 --- [    Test worker] c.e.demo.ApiFarquardApplicationTests     : Starting ApiFarquardApplicationTests using Java 17.0.8 with PID 636 (started by Franco in C:\Users\Franco\Documents\UTN\3ro\Desarrollo de software\BACKEND PROYECTO\El-buen-sabor-BackEnd\ApiBack\demo)
+2023-10-24T12:11:57.200-03:00  INFO 636 --- [    Test worker] c.e.demo.ApiFarquardApplicationTests     : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2023-10-24T12:11:58.503-03:00  INFO 636 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-24T12:11:58.680-03:00  INFO 636 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 165 ms. Found 19 JPA repository interfaces.
+2023-10-24T12:11:59.542-03:00  INFO 636 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-24T12:11:59.652-03:00  INFO 636 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.9.Final
+2023-10-24T12:11:59.658-03:00  INFO 636 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-10-24T12:11:59.864-03:00  INFO 636 --- [    Test worker] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
+2023-10-24T12:11:59.901-03:00  INFO 636 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-24T12:12:00.191-03:00  INFO 636 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-24T12:12:00.214-03:00  INFO 636 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-24T12:12:00.571-03:00  INFO 636 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:./betodb user=SA
+2023-10-24T12:12:00.575-03:00  INFO 636 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-24T12:12:01.171-03:00  INFO 636 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-24T12:12:02.408-03:00  INFO 636 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 Hibernate: create table categoria (id bigint generated by default as identity, fecha_alta timestamp(6), fecha_baja timestamp(6), fecha_modificacion timestamp(6), descripcion_categoria varchar(255), fecha_hora_baja timestamp(6), nombre_categoria varchar(255), primary key (id))
 Hibernate: create table cliente (id bigint generated by default as identity, fecha_alta timestamp(6), fecha_baja timestamp(6), fecha_modificacion timestamp(6), apellido varchar(255), email varchar(255), nombre varchar(255), telefono varchar(255), id_usuario bigint, primary key (id))
 Hibernate: create table comprobante (id bigint generated by default as identity, fecha_alta timestamp(6), fecha_baja timestamp(6), fecha_modificacion timestamp(6), numero varchar(255), total numeric(10,2), primary key (id))
@@ -316,15 +316,15 @@ Hibernate: alter table if exists producto add constraint FK3jg9pv0i3w927ixfwgwsh
 Hibernate: alter table if exists producto add constraint FK9nyueixdsgbycfhf7allg8su foreign key (id_categoria) references categoria
 Hibernate: alter table if exists receta add constraint FKt1cbxy3y05grup6m4jcywx53p foreign key (id_ingrediente_receta) references ingrediente_receta
 Hibernate: alter table if exists rubro_articulo add constraint FKib3v7aol7nr8q3ddv07qlxcpe foreign key (id_rubro_padre) references rubro_articulo
-2023-10-24T12:04:29.315-03:00  INFO 14936 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-10-24T12:04:29.335-03:00  WARN 14936 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'comprobanteController': Unsatisfied dependency expressed through field 'servicio': Error creating bean with name 'comprobanteServiceImpl' defined in file [C:\Users\Franco\Documents\UTN\3ro\Desarrollo de software\BACKEND PROYECTO\El-buen-sabor-BackEnd\ApiBack\demo\build\classes\java\main\com\example\demo\services\ComprobanteServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.example.demo.repository.BaseRepository&lt;com.example.demo.entities.Comprobante, java.lang.Long&gt;' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
-2023-10-24T12:04:29.336-03:00  INFO 14936 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-10-24T12:04:29.338-03:00  INFO 14936 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-10-24T12:04:29.341-03:00  INFO 14936 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-10-24T12:04:29.352-03:00  INFO 14936 --- [    Test worker] .s.b.a.l.ConditionEvaluationReportLogger : 
+2023-10-24T12:12:02.598-03:00  INFO 636 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-24T12:12:02.629-03:00  WARN 636 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'comprobanteController': Unsatisfied dependency expressed through field 'servicio': Error creating bean with name 'comprobanteServiceImpl' defined in file [C:\Users\Franco\Documents\UTN\3ro\Desarrollo de software\BACKEND PROYECTO\El-buen-sabor-BackEnd\ApiBack\demo\build\classes\java\main\com\example\demo\services\ComprobanteServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.example.demo.repository.BaseRepository&lt;com.example.demo.entities.Comprobante, java.lang.Long&gt;' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-10-24T12:12:02.630-03:00  INFO 636 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-24T12:12:02.639-03:00  INFO 636 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-24T12:12:02.657-03:00  INFO 636 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-24T12:12:02.679-03:00  INFO 636 --- [    Test worker] .s.b.a.l.ConditionEvaluationReportLogger : 
 
 Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2023-10-24T12:04:29.398-03:00 ERROR 14936 --- [    Test worker] o.s.b.d.LoggingFailureAnalysisReporter   : 
+2023-10-24T12:12:02.765-03:00 ERROR 636 --- [    Test worker] o.s.b.d.LoggingFailureAnalysisReporter   : 
 
 ***************************
 APPLICATION FAILED TO START
@@ -342,9 +342,9 @@ Action:
 
 Consider defining a bean of type 'com.example.demo.repository.BaseRepository' in your configuration.
 
-2023-10-24T12:04:29.411-03:00 ERROR 14936 --- [    Test worker] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] to prepare test instance [com.example.demo.ApiFarquardApplicationTests@7afac89a]
+2023-10-24T12:12:02.784-03:00 ERROR 636 --- [    Test worker] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] to prepare test instance [com.example.demo.ApiFarquardApplicationTests@7c55e559]
 
-java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@4ee80a94 testClass = com.example.demo.ApiFarquardApplicationTests, locations = [], classes = [com.example.demo.ApiFarquardApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceLocations = [], propertySourceProperties = [&quot;org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true&quot;], contextCustomizers = [org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@1f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizer@fc258b1, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@acdb094, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@7216fb24, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@ebb6851, org.springframework.boot.test.context.SpringBootTestAnnotation@eb30e6db], resourceBasePath = &quot;src/main/webapp&quot;, contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
+java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@6f2b608e testClass = com.example.demo.ApiFarquardApplicationTests, locations = [], classes = [com.example.demo.ApiFarquardApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceLocations = [], propertySourceProperties = [&quot;org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true&quot;], contextCustomizers = [org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@1f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizer@fc258b1, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@acdb094, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@7216fb24, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@ebb6851, org.springframework.boot.test.context.SpringBootTestAnnotation@eb30e6db], resourceBasePath = &quot;src/main/webapp&quot;, contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:143) ~[spring-test-6.0.12.jar:6.0.12]
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:127) ~[spring-test-6.0.12.jar:6.0.12]
 	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:191) ~[spring-test-6.0.12.jar:6.0.12]
@@ -534,7 +534,7 @@ Unconditional classes:
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.3</a> at 24 oct. 2023 12:04:29</p>
+<a href="http://www.gradle.org">Gradle 8.3</a> at 24 oct. 2023 12:12:03</p>
 </div>
 </div>
 </body>
