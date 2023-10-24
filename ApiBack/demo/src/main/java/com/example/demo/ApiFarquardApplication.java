@@ -13,25 +13,9 @@ import java.util.Random;
 
 @SpringBootApplication
 public class ApiFarquardApplication {
-	@Autowired
-	protected FacturaRepository facturaRepository;
-
 	public static void main(String[] args) {
 		SpringApplication.run(ApiFarquardApplication.class, args);
 		System.out.println("Corriendo mi proyecto Api");
 	}
-	@Bean
-	CommandLineRunner init() {
-		return args -> {
-
-			Random random = new Random();
-
-			for (int i = 0; i < 5; i++) {
-				Factura factura = new Factura();
-				factura.setFechaFacturacion(new Date());
-			}
-
-		};
 
 	}
-}
