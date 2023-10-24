@@ -1,4 +1,6 @@
 package com.example.demo.services;
 
-public interface ProductoService {
+import com.example.demo.entities.Producto;
+
+public interface ProductoService extends BaseService<Producto, Long>{
 }
