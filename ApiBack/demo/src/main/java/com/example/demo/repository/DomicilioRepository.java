@@ -18,9 +18,6 @@ public interface DomicilioRepository extends BaseRepository<Domicilio, Long> {
 
     Page<Domicilio> findByCalleContaining(String calle, Pageable pageable);
 
-    boolean existsByCodigoPostal(int codigoPostal);
-
-
     //Anotación JPQL parametros indexados
     @Query(value = "SELECT d FROM Domicilio d WHERE d.calle LIKE '%?1%'")
     List<Domicilio> search(String filtro);

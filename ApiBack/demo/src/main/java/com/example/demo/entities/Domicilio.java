@@ -27,10 +27,6 @@ public class Domicilio extends Base {
     @Column(precision = 5)
     private Integer numero;
 
-    @NotNull
-    @Column(precision = 4)
-    private Integer codigoPostal;
-
     @Column(name = "numero_vivienda")
     private Integer numeroDpto;
 
