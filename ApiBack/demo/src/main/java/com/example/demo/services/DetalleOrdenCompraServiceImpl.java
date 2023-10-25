@@ -1,7 +1,6 @@
 package com.example.demo.services;
 
 import com.example.demo.entities.DetalleOrdenCompra;
-import com.example.demo.entities.Producto;
 import com.example.demo.repository.BaseRepository;
 import com.example.demo.repository.DetalleOrdenCompraRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,5 +47,27 @@ public class DetalleOrdenCompraServiceImpl extends BaseServiceImpl<DetalleOrdenC
     @Override
     public boolean delete(Long aLong) throws Exception {
         return false;
+    }
+
+    @Override
+    public List<DetalleOrdenCompra> search(String filtro) throws Exception {
+        try {
+            List<DetalleOrdenCompra> detalleOrdenCompras = detalleOrdenCompraRepository.searchNativo(filtro);
+
+            return detalleOrdenCompras;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+
+    @Override
+    public Page<DetalleOrdenCompra> search(String filtro, Pageable pageable) throws Exception {
+        try {
+            Page<DetalleOrdenCompra> detalleOrdenCompras = detalleOrdenCompraRepository.searchNativo(filtro, pageable);
+
+            return detalleOrdenCompras;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
     }
 }
