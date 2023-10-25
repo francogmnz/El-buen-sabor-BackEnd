@@ -1,5 +1,6 @@
 package com.example.demo.services;
 
+import com.example.demo.entities.Ingrediente;
 import com.example.demo.entities.RubroIngrediente;
 import com.example.demo.repository.BaseRepository;
 import com.example.demo.repository.RubroIngredienteRepository;
@@ -12,7 +13,7 @@ public class RubroIngredienteServiceImpl extends BaseServiceImpl<RubroIngredient
 
     private final RubroIngredienteRepository rubroIngredienteRepository;
 
-    public RubroIngredienteServiceImpl(BaseRepository<RubroIngrediente, Long> baseRepository, RubroIngredienteRepository rubroIngredienteRepository) {
+    public RubroIngredienteServiceImpl(BaseRepository<Ingrediente, Long> baseRepository, RubroIngredienteRepository rubroIngredienteRepository) {
         super(baseRepository);
         this.rubroIngredienteRepository = rubroIngredienteRepository;
     }

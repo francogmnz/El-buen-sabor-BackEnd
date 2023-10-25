@@ -1,5 +1,6 @@
 package com.example.demo.services;
 
+import com.example.demo.entities.Ingrediente;
 import com.example.demo.entities.RubroProducto;
 import com.example.demo.repository.BaseRepository;
 import com.example.demo.repository.RubroProductoRepository;
@@ -13,8 +14,8 @@ public class RubroProductoServiceImpl extends BaseServiceImpl<RubroProducto, Lon
 
     @Autowired
     private RubroProductoRepository rubroProductoRepository;
-    
-    public RubroProductoServiceImpl(BaseRepository<RubroProducto, Long> baseRepository) {
+
+    public RubroProductoServiceImpl(BaseRepository<Ingrediente, Long> baseRepository) {
         super(baseRepository);
     }
 

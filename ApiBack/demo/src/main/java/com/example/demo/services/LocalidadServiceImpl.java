@@ -1,5 +1,6 @@
 package com.example.demo.services;
 
+import com.example.demo.entities.Ingrediente;
 import com.example.demo.entities.Localidad;
 import com.example.demo.repository.BaseRepository;
 import com.example.demo.repository.LocalidadRepository;
@@ -13,12 +14,10 @@ import java.util.List;
 @Service
 public class LocalidadServiceImpl extends BaseServiceImpl<Localidad, Long> implements LocalidadService {
 
-    @Autowired
-    private LocalidadRepository localidadRepository;
-    public LocalidadServiceImpl(BaseRepository<Localidad, Long> baseRepository, LocalidadRepository localidadRepository) {
+    public LocalidadServiceImpl(BaseRepository<Ingrediente, Long> baseRepository) {
         super(baseRepository);
-        this.localidadRepository = localidadRepository;
     }
+
     @Override
     public List<Localidad> findAll() throws Exception {
         return null;

@@ -17,7 +17,7 @@ import java.util.Date;
 @Setter
 public class
 RubroProducto extends Base{
-    private String descripcionCategoria;
+    private String descripcionCategoriaProducto;
     private Date fechaHoraBaja;
-    private String nombreCategoria;
+    private String nombreCategoriaProducto;
 }

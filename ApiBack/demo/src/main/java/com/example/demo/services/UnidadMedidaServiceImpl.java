@@ -1,5 +1,6 @@
 package com.example.demo.services;
 
+import com.example.demo.entities.Ingrediente;
 import com.example.demo.entities.UnidadMedida;
 import com.example.demo.repository.BaseRepository;
 import com.example.demo.repository.UnidadMedidaRepository;
@@ -12,12 +13,13 @@ import java.util.List;
 
 @Service
 public class UnidadMedidaServiceImpl extends BaseServiceImpl<UnidadMedida, Long> implements UnidadMedidaService{
-    @Autowired
-    private UnidadMedidaRepository unidadmedidaRepository;
 
-    public UnidadMedidaServiceImpl(BaseRepository<UnidadMedida, Long> baseRepository, UnidadMedidaRepository unidadmedidaRepository) {
+    @Autowired
+
+    private UnidadMedidaRepository unidadMedidaRepository;
+
+    public UnidadMedidaServiceImpl(BaseRepository<Ingrediente, Long> baseRepository) {
         super(baseRepository);
-        this.unidadmedidaRepository = unidadmedidaRepository;
     }
 
     @Override
@@ -25,7 +27,7 @@ public class UnidadMedidaServiceImpl extends BaseServiceImpl<UnidadMedida, Long>
         try {
             //List<UnidadMedida> unidadesmedida = unidadmedidaRepository.findByDenominacionContaining(filtro, filtro);
             //List<UnidadMedida> unidadesmedida = unidadmedidaRepository.search(filtro);
-            List<UnidadMedida> unidadesmedida = unidadmedidaRepository.searchNativo(filtro);
+            List<UnidadMedida> unidadesmedida = unidadMedidaRepository.searchNativo(filtro);
 
             return unidadesmedida;
         } catch (Exception e) {
@@ -38,7 +40,7 @@ public class UnidadMedidaServiceImpl extends BaseServiceImpl<UnidadMedida, Long>
         try {
             //Page<UnidadMedida> unidadesmedida = unidadmedidaRepository.findByDenominacionContaining(filtro, filtro, pageable);
             //Page<UnidadMedida> unidadesmedida = unidadmedidaRepository.search(filtro, pageable);
-            Page<UnidadMedida> unidadesmedida = unidadmedidaRepository.searchNativo(filtro, pageable);
+            Page<UnidadMedida> unidadesmedida = unidadMedidaRepository.searchNativo(filtro, pageable);
 
             return unidadesmedida;
         } catch (Exception e) {

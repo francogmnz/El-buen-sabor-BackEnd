@@ -1,51 +1,85 @@
 package com.example.demo.services;
 
-import com.example.demo.entities.Localidad;
+import com.example.demo.entities.Ingrediente;
 import com.example.demo.entities.Producto;
 import com.example.demo.repository.BaseRepository;
 import com.example.demo.repository.ProductoRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 @Service
 public class ProductoServiceImpl extends BaseServiceImpl<Producto, Long> implements ProductoService{
     @Autowired
-    private ProductoRepository productoRepository;
+    private ProductoRepository ProductoRepository;
 
-    public ProductoServiceImpl(BaseRepository<Producto, Long> baseRepository, ProductoRepository productoRepository) {
+    public ProductoServiceImpl(BaseRepository<Ingrediente, Long> baseRepository, com.example.demo.repository.ProductoRepository productoRepository) {
         super(baseRepository);
+        ProductoRepository = productoRepository;
+    }
+
+    @Transactional
+    @Override
+    public List<Producto> search(String filtro) throws Exception{
+        try{
+            //return personaRepository.findByNombreContainingOrApellidoContaining(filtro, filtro);
+            //return personaRepository.searchJPQL(filtro);
+            return ProductoRepository.searchNative(filtro);
+        }
+        catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
     }
 
     @Override
-    public List<Producto> findAll() throws Exception {
-        return null;
+    public Page<Producto> searchByNombre(String filtro, Pageable pageable) throws Exception {
+        try {
+
+            Page<Producto> Productos = ProductoRepository.searchByNombre(filtro, pageable);
+
+            return Productos;
+        } catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
     }
 
     @Override
-    public Page<Producto> findAll(Pageable pageable) throws Exception {
-        return null;
+    public Page<Producto> searchByPrecioVenta(BigDecimal precioVenta, Pageable pageable) throws Exception {
+        try {
+
+            Page<Producto> Productos = ProductoRepository.searchByPrecioVenta(precioVenta, pageable);
+
+            return Productos;
+        } catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
     }
 
     @Override
-    public Producto findById(Long aLong) throws Exception {
-        return null;
+    public Page<Producto> searchByPrecioVentaRange(BigDecimal precioMinimo, BigDecimal precioMaximo, Pageable pageable) throws Exception {
+        try {
+
+            Page<Producto> Productos = ProductoRepository.searchByPrecioVentaRange(precioMinimo, precioMaximo, pageable);
+
+            return Productos;
+        } catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
     }
 
     @Override
-    public Producto save(Producto entity) throws Exception {
-        return null;
-    }
+    public Page<Producto> searchByCategoriaNombre(String nombreCategoria, Pageable pageable) throws Exception {
+        try {
 
-    @Override
-    public Producto update(Long aLong, Producto entity) throws Exception {
-        return null;
-    }
+            Page<Producto> Productos = ProductoRepository.searchByCategoriaNombre(nombreCategoria, pageable);
 
-    @Override
-    public boolean delete(Long aLong) throws Exception {
-        return false;
+            return Productos;
+        } catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
     }
 }

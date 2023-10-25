@@ -4,6 +4,8 @@ import com.example.demo.entities.Factura;
 import com.example.demo.entities.Ingrediente;
 import com.example.demo.repository.BaseRepository;
 import com.example.demo.repository.FacturaRepository;
+import com.example.demo.repository.FacturaRepository;
+import com.example.demo.repository.IngredienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -20,9 +22,9 @@ public class FacturaServiceImpl extends BaseServiceImpl<Factura, Long> implement
 
     @Autowired
     private FacturaRepository facturaRepository;
-
-    public FacturaServiceImpl(BaseRepository<Factura, Long> baseRepository) {
+    public FacturaServiceImpl(BaseRepository<Ingrediente, Long> baseRepository, IngredienteRepository ingredienteRepository) {
         super(baseRepository);
+        this.facturaRepository = facturaRepository;
     }
 
     @Override

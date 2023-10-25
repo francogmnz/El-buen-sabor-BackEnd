@@ -1,5 +1,6 @@
 package com.example.demo.services;
 
+import com.example.demo.entities.Ingrediente;
 import com.example.demo.entities.OrdenCompra;
 import com.example.demo.repository.BaseRepository;
 import com.example.demo.repository.OrdenCompraRepository;
@@ -12,11 +13,8 @@ import java.util.List;
 @Service
 public class OrdenCompraServiceImpl extends BaseServiceImpl<OrdenCompra,Long> implements OrdenCompraService {
 
-    @Autowired
-    private OrdenCompraRepository ordenCompraRepository;
-    public OrdenCompraServiceImpl(BaseRepository<OrdenCompra, Long> baseRepository, OrdenCompraRepository ordenCompraRepository) {
+    public OrdenCompraServiceImpl(BaseRepository<Ingrediente, Long> baseRepository) {
         super(baseRepository);
-        this.ordenCompraRepository = ordenCompraRepository;
     }
 
     @Override

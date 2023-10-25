@@ -1,5 +1,6 @@
 package com.example.demo.services;
 
+import com.example.demo.entities.Ingrediente;
 import com.example.demo.entities.NotaCredito;
 import com.example.demo.repository.BaseRepository;
 import com.example.demo.repository.NotaCreditoRepository;
@@ -11,8 +12,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 @Service
 public class NotaCreditoServiceImpl extends BaseServiceImpl<NotaCredito,Long> {
-    public NotaCreditoServiceImpl(BaseRepository<NotaCredito, Long> baseRepository) {
+
+    public NotaCreditoServiceImpl(BaseRepository<Ingrediente, Long> baseRepository) {
         super(baseRepository);
-    }}
+    }
+}
 
 
