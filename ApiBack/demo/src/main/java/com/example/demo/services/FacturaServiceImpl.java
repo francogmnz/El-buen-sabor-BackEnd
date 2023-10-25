@@ -1,8 +1,10 @@
 package com.example.demo.services;
 
+import com.example.demo.entities.Domicilio;
 import com.example.demo.entities.Factura;
 import com.example.demo.entities.Ingrediente;
 import com.example.demo.repository.BaseRepository;
+import com.example.demo.repository.DomicilioRepository;
 import com.example.demo.repository.FacturaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -70,6 +72,28 @@ public class FacturaServiceImpl extends BaseServiceImpl<Factura, Long> implement
             return true;
         }
         return false;
+    }
+
+    @Override
+    public List<Factura> search(String filtro) throws Exception {
+        try {
+            List<Factura> facturas = facturaRepository.searchNativo(filtro);
+
+            return facturas;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+
+    @Override
+    public Page<Factura> search(String filtro, Pageable pageable) throws Exception {
+        try {
+            Page<Factura> facturas = facturaRepository.searchNativo(filtro, pageable);
+
+            return facturas;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
     }
 }
 
