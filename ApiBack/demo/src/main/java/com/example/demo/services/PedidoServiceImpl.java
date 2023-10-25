@@ -6,47 +6,21 @@ import com.example.demo.repository.BaseRepository;
 import com.example.demo.repository.PedidoRepository;
 import com.example.demo.repository.RecetaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class PedidoServiceImpl extends BaseServiceImpl< Pedido,Long> implements BaseService<Pedido, Long> {
+public class PedidoServiceImpl extends BaseServiceImpl<Pedido, Long> {
+    private final PedidoRepository pedidoRepository;
 
     @Autowired
-    private PedidoRepository pedidoRepository;
-    public PedidoServiceImpl(BaseRepository<Pedido, Long> baseRepository, PedidoRepository pedidoRepository) {
-        super(baseRepository);
+    public PedidoServiceImpl(PedidoRepository pedidoRepository) {
+        super(pedidoRepository); // Llamada al constructor de la clase base
         this.pedidoRepository = pedidoRepository;
     }
-    @Override
-    public List<Pedido> findAll() throws Exception {
-        return null;
-    }
 
-    @Override
-    public Page<Pedido> findAll(Pageable pageable) throws Exception {
-        return null;
-    }
-
-    @Override
-    public Pedido findById(Long aLong) throws Exception {
-        return null;
-    }
-
-    @Override
-    public Pedido save(Pedido entity) throws Exception {
-        return null;
-    }
-
-    @Override
-    public Pedido update(Long aLong, Pedido entity) throws Exception {
-        return null;
-    }
-
-    @Override
-    public boolean delete(Long aLong) throws Exception {
-        return false;
-    }
+    // Otras operaciones de servicio específicas de Pedido
 }

@@ -10,42 +10,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class RecetaServiceImpl extends BaseServiceImpl<Receta,Long> implements BaseService<Receta,Long> {
-
-    @Autowired
-    private RecetaRepository recetaRepository;
-
-    public RecetaServiceImpl(BaseRepository<Receta, Long> baseRepository, RecetaRepository recetaRepository) {
+public class RecetaServiceImpl extends BaseServiceImpl<Receta,Long>  {
+    public RecetaServiceImpl(BaseRepository<Receta, Long> baseRepository) {
         super(baseRepository);
-        this.recetaRepository = recetaRepository;
-    }
-    @Override
-    public List<Receta> findAll() throws Exception {
-        return null;
-    }
-
-    @Override
-    public Page<Receta> findAll(Pageable pageable) throws Exception {
-        return null;
-    }
-
-    @Override
-    public Receta findById(Long aLong) throws Exception {
-        return null;
-    }
-
-    @Override
-    public Receta save(Receta entity) throws Exception {
-        return null;
-    }
-
-    @Override
-    public Receta update(Long aLong, Receta entity) throws Exception {
-        return null;
-    }
-
-    @Override
-    public boolean delete(Long aLong) throws Exception {
-        return false;
     }
 }
