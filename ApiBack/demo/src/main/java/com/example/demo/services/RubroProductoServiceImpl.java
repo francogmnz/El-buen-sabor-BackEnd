@@ -7,7 +7,7 @@ import com.example.demo.repository.RubroProductoRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+//hola
 @Service
 public class RubroProductoServiceImpl extends BaseServiceImpl<RubroProducto,Long> implements  RubroProductoService{
     private final RubroProducto rubroProducto;
