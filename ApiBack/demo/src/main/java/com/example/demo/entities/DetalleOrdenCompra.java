@@ -28,5 +28,7 @@ public class DetalleOrdenCompra extends Base{
     @JoinColumn(name = "id_ingrediente")
     private Ingrediente ingrediente;
 
-
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "id_comprobante")
+    private Comprobante comprobante;
 }
