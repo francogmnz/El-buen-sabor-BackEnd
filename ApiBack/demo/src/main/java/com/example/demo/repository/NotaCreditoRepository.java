@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 
-public interface NotaCreditoRepository extends JpaRepository<NotaCredito, Long> {
+public interface NotaCreditoRepository extends BaseRepository<NotaCredito, Long> {
     // Puedes agregar métodos personalizados relacionados con NotaDeCredito si es necesario
 }

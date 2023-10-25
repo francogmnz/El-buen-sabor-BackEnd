@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 
-public interface RubroIngredienteRepository extends JpaRepository<RubroIngrediente, Long> {
+public interface RubroIngredienteRepository extends BaseRepository<RubroIngrediente, Long> {
     // Puedes agregar métodos personalizados relacionados con RubroArticulo si es necesario
 }

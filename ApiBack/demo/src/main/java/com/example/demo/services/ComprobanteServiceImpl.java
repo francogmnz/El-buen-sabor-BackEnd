@@ -11,14 +11,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ComprobanteServiceImpl extends BaseServiceImpl<Comprobante, Long> implements ComprobanteService {
-
-    @Autowired
-    private ComprobanteRepository ComprobanteRepository;
-    public ComprobanteServiceImpl(BaseRepository<Comprobante, Long> baseRepository, ComprobanteRepository ComprobanteRepository) {
+public class ComprobanteServiceImpl extends BaseServiceImpl<Comprobante, Long> {
+    public ComprobanteServiceImpl(BaseRepository<Comprobante, Long> baseRepository) {
         super(baseRepository);
-        this.ComprobanteRepository = ComprobanteRepository;
     }
+
+
     @Override
     public List<Comprobante> findAll() throws Exception {
         return null;

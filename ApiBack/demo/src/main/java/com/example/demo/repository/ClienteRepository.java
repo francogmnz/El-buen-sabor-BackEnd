@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 
-public interface ClienteRepository extends JpaRepository<Cliente, Long> {
+public interface ClienteRepository extends BaseRepository<Cliente, Long> {
     // Puedes agregar métodos personalizados relacionados con Cliente si es necesario
 }

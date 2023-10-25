@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 
-public interface IngredienteRecetaRepository extends JpaRepository<IngredienteReceta, Long>{
+public interface IngredienteRecetaRepository extends BaseRepository<IngredienteReceta, Long>{
 
 }

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 
-public interface IngredienteRepository extends JpaRepository<Ingrediente, Long> {
+public interface IngredienteRepository extends BaseRepository<Ingrediente, Long> {
     // Puedes agregar métodos personalizados relacionados con Ingrediente si es necesario
 }

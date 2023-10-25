@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 
-public interface DetallePedidoRepository extends JpaRepository<DetallePedido, Long> {
+public interface DetallePedidoRepository extends BaseRepository<DetallePedido, Long> {
     // Puedes agregar métodos personalizados relacionados con DetallePedido si es necesario
 }

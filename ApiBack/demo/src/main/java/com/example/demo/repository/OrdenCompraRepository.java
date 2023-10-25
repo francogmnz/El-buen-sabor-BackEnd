@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 
-public interface OrdenCompraRepository extends JpaRepository<OrdenCompra, Long> {
+public interface OrdenCompraRepository extends BaseRepository<OrdenCompra, Long> {
     // Puedes agregar métodos personalizados relacionados con OrdenCompra si es necesario
 }

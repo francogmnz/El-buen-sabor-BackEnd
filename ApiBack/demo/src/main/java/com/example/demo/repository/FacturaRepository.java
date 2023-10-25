@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 
-public interface FacturaRepository extends JpaRepository<Factura, Long> {
+public interface FacturaRepository extends BaseRepository<Factura, Long> {
     // Puedes agregar métodos personalizados relacionados con Factura si es necesario
 }

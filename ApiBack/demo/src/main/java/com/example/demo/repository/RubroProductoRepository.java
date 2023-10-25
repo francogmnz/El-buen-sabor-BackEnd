@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 
-public interface RubroProductoRepository extends JpaRepository<RubroProducto, Long> {
+public interface RubroProductoRepository extends BaseRepository<RubroProducto, Long> {
     // Puedes agregar métodos personalizados relacionados con Categoria si es necesario
 }

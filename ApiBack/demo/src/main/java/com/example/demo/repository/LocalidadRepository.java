@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 
-public interface LocalidadRepository extends JpaRepository<Localidad, Long> {
+public interface LocalidadRepository extends BaseRepository<Localidad, Long> {
     // Puedes agregar métodos personalizados relacionados con Localidad si es necesario
 }

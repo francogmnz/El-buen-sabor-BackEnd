@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 
-public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
+public interface UsuarioRepository extends BaseRepository<Usuario, Long> {
     // Puedes agregar métodos personalizados relacionados con Usuario si es necesario
 }
