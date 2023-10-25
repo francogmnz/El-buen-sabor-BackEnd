@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ClienteServiceImpl extends BaseServiceImpl<Cliente,Long>{
+public class ClienteServiceImpl extends BaseServiceImpl<Cliente,Long> implements ClienteService{
     @Autowired
     private ClienteRepository clienteRepository;
 

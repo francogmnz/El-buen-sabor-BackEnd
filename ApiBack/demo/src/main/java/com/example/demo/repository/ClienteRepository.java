@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface ClienteRepository extends JpaRepository<Cliente, Long> {
+public interface ClienteRepository extends BaseRepository<Cliente, Long> {
     // Anotación método de Query
     List<Cliente> findByApellidoContaining(String apellido);
 
