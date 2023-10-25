@@ -49,4 +49,25 @@ public class UsuarioServiceImpl extends BaseServiceImpl<Usuario, Long> implement
     public boolean delete(Long aLong) throws Exception {
         return false;
     }
+
+    @Override
+    public List<Usuario> search(String filtro) throws Exception {
+        try {
+            List<Usuario> usuarios = usuarioRepository.search(filtro);
+            return usuarios;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+
+    @Override
+    public Page<Usuario> search(String filtro, Pageable pageable) throws Exception {
+
+        try {
+            Page<Usuario> usuarios = usuarioRepository.search(filtro, pageable);
+            return usuarios;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
 }
