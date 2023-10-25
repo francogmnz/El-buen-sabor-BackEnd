@@ -15,7 +15,8 @@ import java.util.Date;
 @AllArgsConstructor
 @Getter
 @Setter
-public class RubroProducto extends Base{
+public class
+RubroProducto extends Base{
     private String descripcionCategoria;
     private Date fechaHoraBaja;
     private String nombreCategoria;
