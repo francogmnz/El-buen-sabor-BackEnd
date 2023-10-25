@@ -1,10 +1,9 @@
 package com.example.demo.services;
 
 import com.example.demo.entities.DetalleFactura;
+import com.example.demo.entities.Ingrediente;
 import com.example.demo.entities.Pedido;
-import com.example.demo.repository.BaseRepository;
-import com.example.demo.repository.DetalleFacturaRepository;
-import com.example.demo.repository.PedidoRepository;
+import com.example.demo.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -16,7 +15,7 @@ public class DetalleFacturaServiceImpl extends BaseServiceImpl<DetalleFactura, L
 
     @Autowired
     private DetalleFacturaRepository detalleFacturaRepository;
-    public DetalleFacturaServiceImpl(BaseRepository<DetalleFactura, Long> baseRepository, DetalleFacturaRepository detalleFacturaRepository) {
+    public DetalleFacturaServiceImpl(BaseRepository<Ingrediente, Long> baseRepository, IngredienteRepository ingredienteRepository) {
         super(baseRepository);
         this.detalleFacturaRepository = detalleFacturaRepository;
     }

@@ -1,9 +1,12 @@
 package com.example.demo.services;
 
 import com.example.demo.entities.DetalleOrdenCompra;
+import com.example.demo.entities.Ingrediente;
 import com.example.demo.entities.Producto;
 import com.example.demo.repository.BaseRepository;
 import com.example.demo.repository.DetalleOrdenCompraRepository;
+import com.example.demo.repository.DetalleOrdenCompraRepository;
+import com.example.demo.repository.IngredienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,9 +18,9 @@ import java.util.List;
 public class DetalleOrdenCompraServiceImpl extends BaseServiceImpl<DetalleOrdenCompra, Long> implements DetalleOrdenCompraService{
     @Autowired
     private DetalleOrdenCompraRepository detalleOrdenCompraRepository;
-
-    public DetalleOrdenCompraServiceImpl(BaseRepository<DetalleOrdenCompra, Long> baseRepository, DetalleOrdenCompraRepository detalleOrdenCompraRepository) {
+    public DetalleOrdenCompraServiceImpl(BaseRepository<Ingrediente, Long> baseRepository, IngredienteRepository ingredienteRepository) {
         super(baseRepository);
+        this.detalleOrdenCompraRepository = detalleOrdenCompraRepository;
     }
 
     @Override

@@ -1,8 +1,11 @@
 package com.example.demo.services;
 
 import com.example.demo.entities.Domicilio;
+import com.example.demo.entities.Ingrediente;
 import com.example.demo.repository.BaseRepository;
 import com.example.demo.repository.DomicilioRepository;
+import com.example.demo.repository.DomicilioRepository;
+import com.example.demo.repository.IngredienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,10 +15,10 @@ import java.util.List;
 
 @Service
 public class DomicilioServiceImpl extends BaseServiceImpl<Domicilio, Long> implements DomicilioService{
+
     @Autowired
     private DomicilioRepository domicilioRepository;
-
-    public DomicilioServiceImpl(BaseRepository<Domicilio, Long> baseRepository, DomicilioRepository domicilioRepository) {
+    public DomicilioServiceImpl(BaseRepository<Ingrediente, Long> baseRepository, IngredienteRepository ingredienteRepository) {
         super(baseRepository);
         this.domicilioRepository = domicilioRepository;
     }
