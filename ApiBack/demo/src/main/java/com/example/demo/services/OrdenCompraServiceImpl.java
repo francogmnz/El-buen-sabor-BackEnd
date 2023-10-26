@@ -1,5 +1,6 @@
 package com.example.demo.services;
 
+import com.example.demo.entities.Ingrediente;
 import com.example.demo.entities.NotaCredito;
 import com.example.demo.entities.OrdenCompra;
 import com.example.demo.repository.BaseRepository;
@@ -17,7 +18,7 @@ public class OrdenCompraServiceImpl extends BaseServiceImpl<OrdenCompra,Long> im
     @Autowired
     private OrdenCompraRepository ordenCompraRepository;
 
-    public OrdenCompraServiceImpl(BaseRepository<OrdenCompra, Long> baseRepository, OrdenCompraRepository ordenCompraRepository) {
+    public OrdenCompraServiceImpl(BaseRepository<Ingrediente, Long> baseRepository, OrdenCompraRepository ordenCompraRepository) {
         super(baseRepository);
         this.ordenCompraRepository = ordenCompraRepository;
     }

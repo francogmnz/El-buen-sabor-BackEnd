@@ -15,9 +15,9 @@ import java.util.List;
 public interface DetallePedidoRepository extends BaseRepository<DetallePedido, Long> {
 
     // Anotación método de Query
-    List<DetallePedido> findByCalleContaining(String calle);
+    //List<DetallePedido> findByCalleContaining(String calle);
 
-    Page<DetallePedido> findByCalleContaining(String calle, Pageable pageable);
+    //Page<DetallePedido> findByCalleContaining(String calle, Pageable pageable);
 
     //Anotación JPQL parametros indexados
     @Query(value = "SELECT d FROM DetallePedido d WHERE d.subtotalCosto LIKE '%?1%'")

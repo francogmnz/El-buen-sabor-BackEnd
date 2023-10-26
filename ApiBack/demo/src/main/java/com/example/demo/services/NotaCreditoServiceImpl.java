@@ -1,6 +1,7 @@
 package com.example.demo.services;
 
 import com.example.demo.entities.Cliente;
+import com.example.demo.entities.Ingrediente;
 import com.example.demo.entities.NotaCredito;
 import com.example.demo.repository.BaseRepository;
 import com.example.demo.repository.ClienteRepository;
@@ -16,7 +17,7 @@ public class NotaCreditoServiceImpl extends BaseServiceImpl<NotaCredito,Long> im
     @Autowired
     private NotaCreditoRepository notaCreditoRepository;
 
-    public NotaCreditoServiceImpl(BaseRepository<NotaCredito, Long> baseRepository, NotaCreditoRepository notaCreditoRepository) {
+    public NotaCreditoServiceImpl(BaseRepository<Ingrediente, Long> baseRepository, NotaCreditoRepository notaCreditoRepository) {
         super(baseRepository);
         this.notaCreditoRepository = notaCreditoRepository;
     }

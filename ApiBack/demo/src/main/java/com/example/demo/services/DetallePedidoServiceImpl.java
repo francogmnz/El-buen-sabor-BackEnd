@@ -1,6 +1,7 @@
 package com.example.demo.services;
 
 import com.example.demo.entities.DetallePedido;
+import com.example.demo.entities.Ingrediente;
 import com.example.demo.repository.BaseRepository;
 import com.example.demo.repository.DetallePedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,9 @@ public class DetallePedidoServiceImpl extends BaseServiceImpl<DetallePedido, Lon
     @Autowired
     private DetallePedidoRepository detallePedidoRepository;
 
-    public DetallePedidoServiceImpl(BaseRepository<DetallePedido, Long> baseRepository) {
+    public DetallePedidoServiceImpl(BaseRepository<Ingrediente, Long> baseRepository, DetallePedidoRepository detallePedidoRepository) {
         super(baseRepository);
+        this.detallePedidoRepository = detallePedidoRepository;
     }
 
     @Override
