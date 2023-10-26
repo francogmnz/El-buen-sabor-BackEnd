@@ -24,7 +24,9 @@ public abstract class BaseServiceImpl<E extends Base, ID extends Serializable> i
     @Transactional
     public List<E> findAll() throws Exception {
         try {
+            System.out.println("Estot en servicio antes de llamar al repo");
             List<E> entities = baseRepository.findAll();
+            System.out.println("Estoy en el service despues de llamar");
             return entities;
         } catch (Exception e) {
             throw new Exception(e.getMessage());

@@ -14,6 +14,7 @@ public abstract class BaseControllerImpl<E extends Base, S extends BaseServiceIm
     @GetMapping("")
     public ResponseEntity<?> getAll(){
         try{
+            System.out.println("Estoy en el controller");
             return ResponseEntity.status(HttpStatus.OK).body(servicio.findAll());
         }catch(Exception e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error, por favor intente mas tarde.\"}");
