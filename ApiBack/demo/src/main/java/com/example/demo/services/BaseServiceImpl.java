@@ -2,11 +2,11 @@ package com.example.demo.services;
 
 
 import com.example.demo.entities.Base;
+import com.example.demo.entities.Ingrediente;
 import com.example.demo.repository.BaseRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.yaml.snakeyaml.events.Event;
 
 import java.io.Serializable;
 import java.util.List;
@@ -16,8 +16,8 @@ public abstract class BaseServiceImpl<E extends Base, ID extends Serializable> i
 
     protected BaseRepository<E, ID> baseRepository;
 
-    public BaseServiceImpl(BaseRepository<E,ID> baseRepository) {
-        this.baseRepository = baseRepository;
+    public BaseServiceImpl(BaseRepository<Ingrediente, Long> baseRepository) {
+        this.baseRepository = (BaseRepository<E, ID>) baseRepository;
     }
 
     @Override

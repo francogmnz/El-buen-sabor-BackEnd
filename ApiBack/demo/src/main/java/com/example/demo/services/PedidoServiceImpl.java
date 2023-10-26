@@ -1,5 +1,6 @@
 package com.example.demo.services;
 
+import com.example.demo.entities.Ingrediente;
 import com.example.demo.entities.Pedido;
 import com.example.demo.entities.Receta;
 import com.example.demo.repository.BaseRepository;
@@ -16,11 +17,10 @@ import java.util.List;
 public class PedidoServiceImpl extends BaseServiceImpl<Pedido, Long> {
     private final PedidoRepository pedidoRepository;
 
-    @Autowired
-    public PedidoServiceImpl(PedidoRepository pedidoRepository) {
-        super(pedidoRepository); // Llamada al constructor de la clase base
+    public PedidoServiceImpl(BaseRepository<Ingrediente, Long> baseRepository, PedidoRepository pedidoRepository) {
+        super(baseRepository);
         this.pedidoRepository = pedidoRepository;
     }
 
-    // Otras operaciones de servicio específicas de Pedido
+// Otras operaciones de servicio específicas de Pedido
 }

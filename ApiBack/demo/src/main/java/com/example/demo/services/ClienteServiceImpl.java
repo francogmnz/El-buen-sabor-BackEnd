@@ -1,6 +1,7 @@
 package com.example.demo.services;
 
 import com.example.demo.entities.Cliente;
+import com.example.demo.entities.Ingrediente;
 import com.example.demo.entities.UnidadMedida;
 import com.example.demo.repository.BaseRepository;
 import com.example.demo.repository.ClienteRepository;
@@ -19,10 +20,11 @@ public class ClienteServiceImpl extends BaseServiceImpl<Cliente,Long> implements
     @Autowired
     private ClienteRepository clienteRepository;
 
-    public ClienteServiceImpl(BaseRepository<Cliente, Long> baseRepository, ClienteRepository clienteRepository) {
+    public ClienteServiceImpl(BaseRepository<Ingrediente, Long> baseRepository, ClienteRepository clienteRepository) {
         super(baseRepository);
         this.clienteRepository = clienteRepository;
     }
+
 
     @Override
     public List<Cliente> search(String filtro) throws Exception {
@@ -48,6 +50,4 @@ public class ClienteServiceImpl extends BaseServiceImpl<Cliente,Long> implements
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
-    }
-}
-
+    }}

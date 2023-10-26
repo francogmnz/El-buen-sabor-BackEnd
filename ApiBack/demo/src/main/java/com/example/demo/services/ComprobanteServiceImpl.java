@@ -1,8 +1,11 @@
 package com.example.demo.services;
 
 import com.example.demo.entities.Comprobante;
+import com.example.demo.entities.Ingrediente;
 import com.example.demo.repository.BaseRepository;
 import com.example.demo.repository.ComprobanteRepository;
+import com.example.demo.repository.ComprobanteRepository;
+import com.example.demo.repository.IngredienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,8 +15,11 @@ import java.util.List;
 
 @Service
 public class ComprobanteServiceImpl extends BaseServiceImpl<Comprobante, Long> {
-    public ComprobanteServiceImpl(BaseRepository<Comprobante, Long> baseRepository) {
+    @Autowired
+    private ComprobanteRepository comprobanteRepository;
+    public ComprobanteServiceImpl(BaseRepository<Ingrediente, Long> baseRepository, IngredienteRepository ingredienteRepository) {
         super(baseRepository);
+        this.comprobanteRepository = comprobanteRepository;
     }
 
 
