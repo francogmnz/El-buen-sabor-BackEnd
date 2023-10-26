@@ -2,53 +2,52 @@ package com.example.demo.services;
 
 import com.example.demo.entities.Cliente;
 import com.example.demo.entities.Ingrediente;
+import com.example.demo.entities.UnidadMedida;
 import com.example.demo.repository.BaseRepository;
 import com.example.demo.repository.ClienteRepository;
-import com.example.demo.repository.IngredienteRepository;
+import com.example.demo.repository.UnidadMedidaRepository;
+import com.example.demo.services.BaseServiceImpl;
+import com.example.demo.services.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public class ClienteServiceImpl extends BaseServiceImpl<Cliente, Long> implements ClienteService {
-
+@Service
+public class ClienteServiceImpl extends BaseServiceImpl<Cliente,Long> implements ClienteService{
     @Autowired
-    private Cliente cliente;
+    private ClienteRepository clienteRepository;
 
-
-    public ClienteServiceImpl(BaseRepository<Ingrediente, Long> baseRepository, Cliente cliente) {
+    public ClienteServiceImpl(BaseRepository<Ingrediente, Long> baseRepository, ClienteRepository clienteRepository) {
         super(baseRepository);
-        this.cliente = cliente;
+        this.clienteRepository = clienteRepository;
+    }
+
+
+    @Override
+    public List<Cliente> search(String filtro) throws Exception {
+        try {
+            //List<UnidadMedida> unidadesmedida = unidadmedidaRepository.findByDenominacionContaining(filtro, filtro);
+            //List<UnidadMedida> unidadesmedida = unidadmedidaRepository.search(filtro);
+            List<Cliente> clientes = clienteRepository.searchNativo(filtro);
+
+            return clientes;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
     }
 
     @Override
-    public List<Cliente> findAll() throws Exception {
-        return null;
-    }
+    public Page<Cliente> search(String filtro, Pageable pageable) throws Exception {
+        try {
+            //Page<UnidadMedida> unidadesmedida = unidadmedidaRepository.findByDenominacionContaining(filtro, filtro, pageable);
+            //Page<UnidadMedida> unidadesmedida = unidadmedidaRepository.search(filtro, pageable);
+            Page<Cliente> cliente = clienteRepository.searchNativo(filtro, pageable);
 
-    @Override
-    public Page<Cliente> findAll(Pageable pageable) throws Exception {
-        return null;
-    }
-
-    @Override
-    public Cliente findById(Long aLong) throws Exception {
-        return null;
-    }
-
-    @Override
-    public Cliente save(Cliente entity) throws Exception {
-        return null;
-    }
-
-    @Override
-    public Cliente update(Long aLong, Cliente entity) throws Exception {
-        return null;
-    }
-
-    @Override
-    public boolean delete(Long aLong) throws Exception {
-        return false;
-    }
-}
+            return cliente;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }}
