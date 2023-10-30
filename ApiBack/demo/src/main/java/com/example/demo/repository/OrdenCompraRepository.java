@@ -30,13 +30,12 @@ public interface OrdenCompraRepository extends BaseRepository<OrdenCompra, Long>
             value = "SELECT * FROM OrdenCompra WHERE OrdenCompra.numOrdenCompra LIKE '%?1%'",
             nativeQuery = true
     )
-    List<OrdenCompra> searchNativo(String filtro);
+    List<OrdenCompra> searchNativo(int filtro);
     @Query(
             value = "SELECT * FROM OrdenCompra WHERE OrdenCompra.numOrdenCompra LIKE '%?1%'",
             countQuery = "SELECT count(*) FROM OrdenCompra",
             nativeQuery = true
     )
-    Page<OrdenCompra> searchNativo(String filtro, Pageable pageable);
-
+    Page<OrdenCompra> searchNativo(int filtro, Pageable pageable);
 
 }

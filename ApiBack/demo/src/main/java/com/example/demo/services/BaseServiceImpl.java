@@ -2,7 +2,6 @@ package com.example.demo.services;
 
 
 import com.example.demo.entities.Base;
-import com.example.demo.entities.Ingrediente;
 import com.example.demo.repository.BaseRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.data.domain.Page;
@@ -16,8 +15,8 @@ public abstract class BaseServiceImpl<E extends Base, ID extends Serializable> i
 
     protected BaseRepository<E, ID> baseRepository;
 
-    public BaseServiceImpl(BaseRepository<Ingrediente, Long> baseRepository) {
-        this.baseRepository = (BaseRepository<E, ID>) baseRepository;
+    public BaseServiceImpl(BaseRepository<E, ID> baseRepository) {
+        this.baseRepository = baseRepository;
     }
 
     @Override
@@ -34,7 +33,8 @@ public abstract class BaseServiceImpl<E extends Base, ID extends Serializable> i
     }
   @Override
   @Transactional
-  public Page<E> findAll(Pageable pageable) throws Exception { try {
+  public Page<E> findAll(Pageable pageable) throws Exception {
+        try {
         Page<E> entities = baseRepository.findAll(pageable);
         return entities;
     } catch (Exception e) {
@@ -68,9 +68,9 @@ public abstract class BaseServiceImpl<E extends Base, ID extends Serializable> i
     public E update(ID id, E entity) throws Exception {
         try {
             Optional<E> entityOptional = baseRepository.findById(id);
-            E e = entityOptional.get();
-            e = baseRepository.save(entity);
-            return e;
+            E en = entityOptional.get();
+            en = baseRepository.save(en);
+            return en;
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }

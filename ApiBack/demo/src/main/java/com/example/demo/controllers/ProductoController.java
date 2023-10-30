@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping(path = "api/v1/productos")
+@RequestMapping(path = "api/v1/Producto")
 public class ProductoController extends BaseControllerImpl<Producto, ProductoServiceImpl>{
 
     @GetMapping(path = "/search")

@@ -1,7 +1,6 @@
 package com.example.demo.controllers;
 
 import com.example.demo.entities.Cliente;
-import com.example.demo.services.ClienteService;
 import com.example.demo.services.ClienteServiceImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -10,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping(path = "api/v1/Clientes")
+@RequestMapping(path = "api/v1/Cliente")
 public class ClienteController extends BaseControllerImpl<Cliente, ClienteServiceImpl> {
 
     @GetMapping("/search")

@@ -2,9 +2,11 @@ package com.example.demo.services;
 
 import com.example.demo.entities.Cliente;
 import com.example.demo.entities.Ingrediente;
+import com.example.demo.entities.Localidad;
 import com.example.demo.entities.NotaCredito;
 import com.example.demo.repository.BaseRepository;
 import com.example.demo.repository.ClienteRepository;
+import com.example.demo.repository.LocalidadRepository;
 import com.example.demo.repository.NotaCreditoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -15,19 +17,16 @@ import java.util.List;
 @Service
 public class NotaCreditoServiceImpl extends BaseServiceImpl<NotaCredito,Long> implements NotaCreditoService{
     @Autowired
-    private NotaCreditoRepository notaCreditoRepository;
-
-    public NotaCreditoServiceImpl(BaseRepository<Ingrediente, Long> baseRepository, NotaCreditoRepository notaCreditoRepository) {
+    private NotaCreditoRepository notacreditoRepository;
+    public NotaCreditoServiceImpl(BaseRepository<NotaCredito, Long> baseRepository, NotaCreditoRepository notacreditoRepository) {
         super(baseRepository);
-        this.notaCreditoRepository = notaCreditoRepository;
+        this.notacreditoRepository = notacreditoRepository;
     }
 
     @Override
     public List<NotaCredito> search(String filtro) throws Exception {
         try {
-            //List<UnidadMedida> unidadesmedida = unidadmedidaRepository.findByDenominacionContaining(filtro, filtro);
-            //List<UnidadMedida> unidadesmedida = unidadmedidaRepository.search(filtro);
-            List<NotaCredito> notaCredito = notaCreditoRepository.searchNativo(filtro);
+            List<NotaCredito> notaCredito = notacreditoRepository.searchNativo(filtro);
 
             return notaCredito;
         } catch (Exception e) {
@@ -38,9 +37,7 @@ public class NotaCreditoServiceImpl extends BaseServiceImpl<NotaCredito,Long> im
     @Override
     public Page<NotaCredito> search(String filtro, Pageable pageable) throws Exception {
         try {
-            //Page<UnidadMedida> unidadesmedida = unidadmedidaRepository.findByDenominacionContaining(filtro, filtro, pageable);
-            //Page<UnidadMedida> unidadesmedida = unidadmedidaRepository.search(filtro, pageable);
-            Page<NotaCredito> notaCredito = notaCreditoRepository.searchNativo(filtro, pageable);
+            Page<NotaCredito> notaCredito = notacreditoRepository.searchNativo(filtro, pageable);
 
             return notaCredito;
         } catch (Exception e) {

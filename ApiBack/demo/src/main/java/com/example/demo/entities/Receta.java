@@ -10,7 +10,7 @@ import org.antlr.v4.runtime.misc.NotNull;
 import java.util.Date;
 
 @Entity
-@Table(name = "receta")
+@Table(name = "Receta")
 @Getter
 @Setter
 @NoArgsConstructor

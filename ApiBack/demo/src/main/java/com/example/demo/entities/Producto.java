@@ -19,10 +19,11 @@ import java.util.List;
 public class Producto extends Base {
 
     @NotNull
+    @Column(name = "denominacion")
     private String denominacion;
 
     @NotNull
-    @Column(length = 1000)
+    @Column(name = "descripcion", length = 1000)
     private String descripcion;
 
     @NotNull
@@ -44,11 +45,12 @@ public class Producto extends Base {
     private Receta receta;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "id_categoria")
+    @JoinColumn(name = "id_rubro_Producto")
     private RubroProducto rubroProducto;
+
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name= "id-detalleFactura")
-    private List<DetalleFactura> detalleFactura= new ArrayList<DetalleFactura>();
+    @JoinColumn(name= "id_detalleFactura")
+    private List<DetalleFactura> detallesfactura = new ArrayList<DetalleFactura>();
 
 
 }

@@ -16,19 +16,16 @@ import java.util.List;
 @Service
 public class OrdenCompraServiceImpl extends BaseServiceImpl<OrdenCompra,Long> implements OrdenCompraService {
     @Autowired
-    private OrdenCompraRepository ordenCompraRepository;
-
-    public OrdenCompraServiceImpl(BaseRepository<Ingrediente, Long> baseRepository, OrdenCompraRepository ordenCompraRepository) {
+    private OrdenCompraRepository ordencompraRepository;
+    public OrdenCompraServiceImpl(BaseRepository<OrdenCompra, Long> baseRepository, OrdenCompraRepository ordencompraRepository) {
         super(baseRepository);
-        this.ordenCompraRepository = ordenCompraRepository;
+        this.ordencompraRepository = ordencompraRepository;
     }
 
     @Override
-    public List<OrdenCompra> search(String filtro) throws Exception {
+    public List<OrdenCompra> search(int filtro) throws Exception {
         try {
-            //List<UnidadMedida> unidadesmedida = unidadmedidaRepository.findByDenominacionContaining(filtro, filtro);
-            //List<UnidadMedida> unidadesmedida = unidadmedidaRepository.search(filtro);
-            List<OrdenCompra> ordenCompra = ordenCompraRepository.searchNativo(filtro);
+            List<OrdenCompra> ordenCompra = ordencompraRepository.searchNativo(filtro);
 
             return ordenCompra;
         } catch (Exception e) {
@@ -37,11 +34,11 @@ public class OrdenCompraServiceImpl extends BaseServiceImpl<OrdenCompra,Long> im
     }
 
     @Override
-    public Page<OrdenCompra> search(String filtro, Pageable pageable) throws Exception {
+    public Page<OrdenCompra> search(int filtro, Pageable pageable) throws Exception {
         try {
             //Page<UnidadMedida> unidadesmedida = unidadmedidaRepository.findByDenominacionContaining(filtro, filtro, pageable);
             //Page<UnidadMedida> unidadesmedida = unidadmedidaRepository.search(filtro, pageable);
-            Page<OrdenCompra> ordenCompra = ordenCompraRepository.searchNativo(filtro, pageable);
+            Page<OrdenCompra> ordenCompra = ordencompraRepository.searchNativo(filtro, pageable);
 
             return ordenCompra;
         } catch (Exception e) {

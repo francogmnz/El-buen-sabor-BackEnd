@@ -18,7 +18,8 @@ public class UnidadMedidaServiceImpl extends BaseServiceImpl<UnidadMedida, Long>
 
     private UnidadMedidaRepository unidadMedidaRepository;
 
-    public UnidadMedidaServiceImpl(BaseRepository<Ingrediente, Long> baseRepository) {
+    public UnidadMedidaServiceImpl(BaseRepository<UnidadMedida, Long> baseRepository) {
+
         super(baseRepository);
     }
 

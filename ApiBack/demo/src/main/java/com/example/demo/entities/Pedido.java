@@ -16,7 +16,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "pedido")
+@Table(name = "Pedido")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
