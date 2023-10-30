@@ -36,5 +36,9 @@ public interface IngredienteRepository extends BaseRepository<Ingrediente, Long>
     )
     Page<Ingrediente> searchNativo(String filtro, Pageable pageable);
 
+    @Query( value = "SELECT * FROM ingrediente WHERE (stockActual <= stockMinimo) OR (stockActual <= (stockMinimo + 0.2 * stockMinimo)) ",
+            nativeQuery = true)
+    List<Ingrediente> bajoStock();
+
 
 }

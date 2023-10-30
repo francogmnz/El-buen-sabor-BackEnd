@@ -42,4 +42,13 @@ public class IngredienteServiceImpl extends BaseServiceImpl<Ingrediente, Long> i
             throw new Exception(e.getMessage());
         }
     }
-}
+
+    @Override
+    public List<Ingrediente> bajoStock() throws Exception {
+        try{
+            List<Ingrediente> ingredientes = ingredienteRepository.bajoStock();
+            return ingredientes;
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+}}

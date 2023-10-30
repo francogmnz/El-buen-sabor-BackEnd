@@ -12,4 +12,6 @@ public interface IngredienteService extends BaseService<Ingrediente,Long>{
     List<Ingrediente> search(String filtro) throws Exception;
     Page<Ingrediente> search(String filtro, Pageable pageable) throws Exception;
 
+    List<Ingrediente> bajoStock() throws Exception;
+
 }
