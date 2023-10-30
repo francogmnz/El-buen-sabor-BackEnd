@@ -1,10 +1,10 @@
 package com.example.demo.services;
 
-import com.example.demo.entities.Ingrediente;
-import com.example.demo.entities.RubroProducto;
-import com.example.demo.repository.BaseRepository;
-import com.example.demo.repository.RubroProductoRepository;
+import com.example.demo.entities.*;
+import com.example.demo.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,19 +13,22 @@ import java.util.List;
 public class RubroProductoServiceImpl extends BaseServiceImpl<RubroProducto, Long> implements RubroProductoService{
 
     @Autowired
-    private RubroProductoRepository rubroProductoRepository;
-
-    public RubroProductoServiceImpl(BaseRepository<Ingrediente, Long> baseRepository) {
+    private RubroProductoRepository rubroproductoRepository;
+    public RubroProductoServiceImpl(BaseRepository<RubroProducto, Long> baseRepository, RubroProductoRepository rubroproductoaRepository) {
         super(baseRepository);
+        this.rubroproductoRepository = rubroproductoRepository;
     }
+
 
     @Override
     public List<RubroProducto> search(String filtro) throws Exception {
-        try {
-            List<RubroProducto> rubros = rubroProductoRepository.searchNativa(filtro);
-            return rubros;
-        } catch (Exception e) {
-            throw new Exception(e.getMessage());
-        }
+        return null;
+    }
+
+    @Override
+    public Page<RubroProducto> search(String filtro, Pageable pageable) throws Exception {
+        return null;
     }
 }
+
+

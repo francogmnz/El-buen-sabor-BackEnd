@@ -8,9 +8,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 public abstract class BaseControllerImpl<E extends Base, S extends BaseServiceImpl<E,Long>> implements BaseController<E, Long> {
+
     @Autowired
     protected S servicio;
-//implementacion de todos los metodos que tengo en la interfaz BaseController
+
+    //implementacion de todos los metodos que tengo en la interfaz BaseController
     @GetMapping("")
     public ResponseEntity<?> getAll(){
         try{
@@ -29,12 +31,11 @@ public abstract class BaseControllerImpl<E extends Base, S extends BaseServiceIm
         }
     }
 
-
     @GetMapping("/{id}")
     public ResponseEntity<?> getOne(@PathVariable Long id){
         try{
             return ResponseEntity.status(HttpStatus.OK).body(servicio.findById(id));
-        }catch(Exception e){
+        }catch (Exception e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error, por favor intente mas tarde.\"}");
         }
     }
@@ -43,7 +44,7 @@ public abstract class BaseControllerImpl<E extends Base, S extends BaseServiceIm
     public ResponseEntity<?> save(@RequestBody E entity){
         try{
             return ResponseEntity.status(HttpStatus.OK).body(servicio.save(entity));
-        }catch(Exception e){
+        } catch (Exception e){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\":\"Error, por favor intente mas tarde.\"}");
         }
     }
@@ -52,7 +53,7 @@ public abstract class BaseControllerImpl<E extends Base, S extends BaseServiceIm
     public ResponseEntity<?> update(@PathVariable Long id,@RequestBody E entity){
         try{
             return ResponseEntity.status(HttpStatus.OK).body(servicio.update(id, entity));
-        }catch(Exception e){
+        } catch(Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\":\"Error, por favor intente mas tarde.\"}");
         }
     }
@@ -61,7 +62,7 @@ public abstract class BaseControllerImpl<E extends Base, S extends BaseServiceIm
     public ResponseEntity<?> delete(@PathVariable Long id){
         try{
             return ResponseEntity.status(HttpStatus.NO_CONTENT).body(servicio.delete(id));
-        }catch(Exception e){
+        } catch(Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\":\"Error, por favor intente mas tarde.\"}");
         }
     }

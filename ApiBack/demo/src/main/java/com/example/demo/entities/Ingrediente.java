@@ -19,6 +19,7 @@ import java.util.Date;
 public class Ingrediente extends Base {
 
     @NotNull
+    @Column(name = "denominacion")
     private String denominacion;
 
     @Column(name = "url_imagen")

@@ -1,9 +1,6 @@
 package com.example.demo.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,14 +16,21 @@ import org.antlr.v4.runtime.misc.NotNull;
 public class DetalleOrdenCompra extends Base{
 
     @NotNull
-    private Integer cantidadDetalleCompra;
+    @Column(name = "cantidadDetalleOrdenCompra")
+    private Integer cantidadDetalleOrdenCompra;
 
     @NotNull
-    private Double precioUnitarioDetalleCompra;
+    @Column(name = "precioUnitarioDetalleCompra")
+    private Integer precioUnitarioDetalleCompra;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_ingrediente")
     private Ingrediente ingrediente;
+    
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "id_comprobante")
+    private Comprobante comprobante;
 
+    
 
 }

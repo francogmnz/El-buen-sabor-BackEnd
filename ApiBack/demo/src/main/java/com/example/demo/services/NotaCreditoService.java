@@ -12,7 +12,6 @@ import java.util.List;
 public interface NotaCreditoService extends BaseService<NotaCredito, Long>{
 
     List<NotaCredito> search(String filtro) throws Exception;
-
     Page<NotaCredito> search(String filtro, Pageable pageable) throws Exception;
 
 

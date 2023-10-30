@@ -1,7 +1,7 @@
 package com.example.demo.services;
 
+
 import com.example.demo.entities.DetallePedido;
-import com.example.demo.entities.Ingrediente;
 import com.example.demo.repository.BaseRepository;
 import com.example.demo.repository.DetallePedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,83 +12,31 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class DetallePedidoServiceImpl extends BaseServiceImpl<DetallePedido, Long> implements BaseService<DetallePedido, Long> {
+public class DetallePedidoServiceImpl extends BaseServiceImpl<DetallePedido, Long> implements DetallePedidoService {
 
     @Autowired
-    private DetallePedidoRepository detallePedidoRepository;
-
-    public DetallePedidoServiceImpl(BaseRepository<Ingrediente, Long> baseRepository, DetallePedidoRepository detallePedidoRepository) {
+    private DetallePedidoRepository detallepedidoRepository;
+    public DetallePedidoServiceImpl(BaseRepository<DetallePedido, Long> baseRepository, DetallePedidoRepository detallepedidoRepository) {
         super(baseRepository);
-        this.detallePedidoRepository = detallePedidoRepository;
+        this.detallepedidoRepository = detallepedidoRepository;
     }
 
-    @Override
-    public List<DetallePedido> findAll() throws Exception {
-        // Implementación para buscar todas las facturas en la base de datos
-        return detallePedidoRepository.findAll();
-    }
-
-    @Override
-    public Page<DetallePedido> findAll(Pageable pageable) throws Exception {
-        // Implementación para buscar todas las facturas con paginación
-        return detallePedidoRepository.findAll(pageable);
-    }
-
-    @Override
-    public DetallePedido findById(Long aLong) throws Exception {
-        // Implementación para buscar una factura por su ID
-        return detallePedidoRepository.findById(aLong).orElse(null);
-    }
-
-    @Override
-    public DetallePedido save(DetallePedido entity) throws Exception {
-        // Implementación para guardar una factura en la base de datos
-        return detallePedidoRepository.save(entity);
-    }
-
-    @Override
-    public DetallePedido update(Long aLong, DetallePedido entity) throws Exception {
-        // Implementación para actualizar una factura existente por su ID
-        DetallePedido existingDetallePedido = detallePedidoRepository.findById(aLong).orElse(null);
-        if (existingDetallePedido != null) {
-            // Realizar las actualizaciones necesarias en existingFactura
-            // Luego, guardar la factura actualizada
-            return detallePedidoRepository.save(existingDetallePedido);
-        }
-        return null;
-    }
-
-    @Override
-    public boolean delete(Long aLong) throws Exception {
-        // Implementación para eliminar una factura por su ID
-        DetallePedido existingDetallePedido = detallePedidoRepository.findById(aLong).orElse(null);
-        if (existingDetallePedido != null) {
-            detallePedidoRepository.delete(existingDetallePedido);
-            return true;
-        }
-        return false;
-    }
-
-    //@Override
     public List<DetallePedido> search(String filtro) throws Exception {
         try {
-            List<DetallePedido> detallePedido = detallePedidoRepository.searchNativo(filtro);
+            List<DetallePedido> detallespedido = detallepedidoRepository.searchNativo(filtro);
 
-            return detallePedido;
+            return detallespedido;
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
     }
 
-    //@Override
     public Page<DetallePedido> search(String filtro, Pageable pageable) throws Exception {
         try {
-            Page<DetallePedido> detallePedido = detallePedidoRepository.searchNativo(filtro, pageable);
+            Page<DetallePedido> detallepedido = detallepedidoRepository.searchNativo(filtro, pageable);
 
-            return detallePedido;
+            return detallepedido;
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
-    }
-}
-
+    }}

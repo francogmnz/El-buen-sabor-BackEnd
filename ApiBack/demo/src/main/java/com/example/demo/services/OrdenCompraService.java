@@ -11,8 +11,7 @@ import java.util.List;
 @Service
 public interface OrdenCompraService extends BaseService<OrdenCompra, Long> {
 
-    List<OrdenCompra> search(String filtro) throws Exception;
-
-    Page<OrdenCompra> search(String filtro, Pageable pageable) throws Exception;
+    List<OrdenCompra> search(int filtro) throws Exception;
+    Page<OrdenCompra> search(int filtro, Pageable pageable) throws Exception;
 
 }

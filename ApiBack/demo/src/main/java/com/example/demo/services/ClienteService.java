@@ -8,10 +8,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public interface ClienteService extends BaseService<Cliente, Long>{
-
+public interface ClienteService extends BaseService<Cliente, Long> {
     List<Cliente> search(String filtro) throws Exception;
-
     Page<Cliente> search(String filtro, Pageable pageable) throws Exception;
 
 }

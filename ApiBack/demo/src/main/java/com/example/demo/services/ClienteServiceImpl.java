@@ -1,8 +1,6 @@
 package com.example.demo.services;
 
 import com.example.demo.entities.Cliente;
-import com.example.demo.entities.Ingrediente;
-import com.example.demo.entities.UnidadMedida;
 import com.example.demo.repository.BaseRepository;
 import com.example.demo.repository.ClienteRepository;
 import com.example.demo.repository.UnidadMedidaRepository;
@@ -20,17 +18,16 @@ public class ClienteServiceImpl extends BaseServiceImpl<Cliente,Long> implements
     @Autowired
     private ClienteRepository clienteRepository;
 
-    public ClienteServiceImpl(BaseRepository<Ingrediente, Long> baseRepository, ClienteRepository clienteRepository) {
+    public ClienteServiceImpl(BaseRepository<Cliente, Long> baseRepository, ClienteRepository clienteRepository) {
         super(baseRepository);
         this.clienteRepository = clienteRepository;
     }
 
-
     @Override
     public List<Cliente> search(String filtro) throws Exception {
         try {
-            //List<UnidadMedida> unidadesmedida = unidadmedidaRepository.findByDenominacionContaining(filtro, filtro);
-            //List<UnidadMedida> unidadesmedida = unidadmedidaRepository.search(filtro);
+            //List<Cliente> clientes = clienteRepository.findByDenominacionContaining(filtro, filtro);
+            //List<Cliente> clientes = clienteRepository.search(filtro);
             List<Cliente> clientes = clienteRepository.searchNativo(filtro);
 
             return clientes;
@@ -42,8 +39,8 @@ public class ClienteServiceImpl extends BaseServiceImpl<Cliente,Long> implements
     @Override
     public Page<Cliente> search(String filtro, Pageable pageable) throws Exception {
         try {
-            //Page<UnidadMedida> unidadesmedida = unidadmedidaRepository.findByDenominacionContaining(filtro, filtro, pageable);
-            //Page<UnidadMedida> unidadesmedida = unidadmedidaRepository.search(filtro, pageable);
+            //Page<Cliente> clientes = clienteRepository.findByDenominacionContaining(filtro, filtro, pageable);
+            //Page<Cliente> clientes = clienteRepository.search(filtro, pageable);
             Page<Cliente> cliente = clienteRepository.searchNativo(filtro, pageable);
 
             return cliente;

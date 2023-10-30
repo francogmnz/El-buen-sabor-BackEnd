@@ -16,20 +16,19 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
-public class OrdenCompra extends Comprobante{
+public class OrdenCompra extends Comprobante {
 
     @NotNull
     @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "fechaHoraOrdenCompra")
     private Date fechaHoraOrdenCompra;
 
     @NotNull
+    @Column(name = "montoTotalOrdenCompra")
     private double montoTotalOrdenCompra;
 
     @NotNull
+    @Column(name = "numOrdenCompra")
     private int numOrdenCompra;
 
-    @NotNull
-    @OneToMany
-    @JoinColumn(name = "detalleOrdenCompra")
-    private List<DetalleOrdenCompra> detalleOrdenCompra;
 }
