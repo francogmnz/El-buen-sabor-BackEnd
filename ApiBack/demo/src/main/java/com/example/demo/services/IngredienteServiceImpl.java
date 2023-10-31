@@ -20,29 +20,6 @@ public class IngredienteServiceImpl extends BaseServiceImpl<Ingrediente, Long> i
         super(baseRepository);
         this.ingredienteRepository = ingredienteRepository;
     }
-
-    @Override
-    public List<Ingrediente> search(String filtro) throws Exception {
-        try {
-            List<Ingrediente> ingredientes = ingredienteRepository.searchNativo(filtro);
-
-            return ingredientes;
-        } catch (Exception e) {
-            throw new Exception(e.getMessage());
-        }
-    }
-
-    @Override
-    public Page<Ingrediente> search(String filtro, Pageable pageable) throws Exception {
-        try {
-            Page<Ingrediente> ingredientes = ingredienteRepository.searchNativo(filtro, pageable);
-
-            return ingredientes;
-        } catch (Exception e) {
-            throw new Exception(e.getMessage());
-        }
-    }
-
     @Override
     public List<Ingrediente> bajoStock() throws Exception {
         try{

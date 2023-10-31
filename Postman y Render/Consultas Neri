@@ -938,61 +938,7 @@
 					"response": []
 				},
 				{
-					"name": "SEARCH",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://Localhost:9000/api/v1/personas/search?filtro=franco",
-							"protocol": "http",
-							"host": [
-								"Localhost"
-							],
-							"port": "9000",
-							"path": [
-								"api",
-								"v1",
-								"personas",
-								"search"
-							],
-							"query": [
-								{
-									"key": "filtro",
-									"value": "franco"
-								},
-								{
-									"key": "",
-									"value": null,
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GET ALL PAGED",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:9000/api/v1/Ingrediente",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9000",
-							"path": [
-								"api",
-								"v1",
-								"Ingrediente"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Search Paged",
+					"name": "bajoStock",
 					"request": {
 						"method": "GET",
 						"header": [],
