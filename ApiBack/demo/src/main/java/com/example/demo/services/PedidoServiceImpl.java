@@ -55,4 +55,13 @@ public class PedidoServiceImpl extends BaseServiceImpl<Pedido,Long> implements P
             throw new Exception(e.getMessage());
         }
     }
+
+    public List<Pedido> pedidoDelivery() throws Exception {
+        try {
+            List<Pedido> pedido = pedidoRepository.pedidoDelivery();
+            return pedido;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
 }
