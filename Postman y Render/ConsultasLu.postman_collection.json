@@ -1,0 +1,324 @@
+{
+	"info": {
+		"_postman_id": "2c2294f8-dd56-4f4c-8bd2-d5dffcb18585",
+		"name": "ConsultasLu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25778996"
+	},
+	"item": [
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Luciana\",\r\n    \"apellido\":\"Maldonado\",\r\n    \"telefono\":261588,\r\n    \"email\":\"lucimaldonado12@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://Localhost:9000/api/v1/Cliente",
+							"protocol": "http",
+							"host": [
+								"Localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"Cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://Localhost:9000/api/v1/Cliente",
+							"protocol": "http",
+							"host": [
+								"Localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"Cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Fernanda\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://Localhost:9000/api/v1/Cliente/1",
+							"protocol": "http",
+							"host": [
+								"Localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"Cliente",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"fechaAlta\": null,\r\n        \"fechaBaja\": null,\r\n        \"fechaModificacion\": null,\r\n        \"nombre\": \"Luciana\",\r\n        \"apellido\": \"Suarez\",\r\n        \"telefono\": \"261588\",\r\n        \"email\": \"lucimaldonado12@gmail.com\",\r\n        \"usuario\": null,\r\n        \"domicilios\": [],\r\n        \"pedidos\": [],\r\n        \"id\": 1\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://Localhost:9000/api/v1/Cliente/1",
+							"protocol": "http",
+							"host": [
+								"Localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"Cliente",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Luciana\",\r\n    \"apellido\":\"Maldonado\",\r\n    \"telefono\":261588,\r\n    \"email\":\"lucimaldonado12@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://Localhost:9000/api/v1/Cliente/1",
+							"protocol": "http",
+							"host": [
+								"Localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"Cliente",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"auth0_id\":345,\r\n   \"username\":\"Cocinero\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://Localhost:9000/api/v1/Usuario",
+							"protocol": "http",
+							"host": [
+								"Localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"Usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"auth0_id\":345,\r\n   \"username\":\"Cocinero1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://Localhost:9000/api/v1/Usuario",
+							"protocol": "http",
+							"host": [
+								"Localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"Usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"auth0_id\":345,\r\n   \"username\":\"Cocinero1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://Localhost:9000/api/v1/Usuario",
+							"protocol": "http",
+							"host": [
+								"Localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"Usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"auth0_id\":\"345\",\r\n   \"username\":\"Pastelero\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://Localhost:9000/api/v1/Usuario",
+							"protocol": "http",
+							"host": [
+								"Localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"Usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"fechaAlta\": null,\r\n        \"fechaBaja\": null,\r\n        \"fechaModificacion\": null,\r\n        \"nombre\": \"Luciana\",\r\n        \"apellido\": \"Suarez\",\r\n        \"telefono\": \"261588\",\r\n        \"email\": \"lucimaldonado12@gmail.com\",\r\n        \"usuario\": null,\r\n        \"domicilios\": [],\r\n        \"pedidos\": [],\r\n        \"id\": 1\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://Localhost:9000/api/v1/Usuario/1",
+							"protocol": "http",
+							"host": [
+								"Localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"Usuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
