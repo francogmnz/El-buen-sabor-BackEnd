@@ -10,7 +10,7 @@ import org.antlr.v4.runtime.misc.NotNull;
 import java.util.Date;
 
 @Entity
-@Table(name = "unidad_medida")
+@Table(name = "UnidadMedida")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -18,11 +18,11 @@ import java.util.Date;
 public class UnidadMedida extends Base {
 
     @NotNull
-    @Column(length = 255)
+    @Column(name = "denominacion", length = 255)
     private String denominacion;
 
     @NotNull
-    @Column(length = 25)
+    @Column(name = "abreviatura", length = 25)
     private String abreviatura;
 
 

@@ -20,7 +20,7 @@ import java.util.Date;
 public class Base implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long ID;
     private Date fechaAlta;
     private Date fechaBaja;
     private Date fechaModificacion;

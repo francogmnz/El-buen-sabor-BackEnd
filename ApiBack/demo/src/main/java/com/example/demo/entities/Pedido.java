@@ -1,6 +1,7 @@
 package com.example.demo.entities;
 
 
+import com.example.demo.enums.EstadoPagoPedido;
 import com.example.demo.enums.EstadoPedido;
 import com.example.demo.enums.FormaPago;
 import com.example.demo.enums.TipoEnvio;
@@ -16,7 +17,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "pedido")
+@Table(name = "Pedido")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -45,6 +46,12 @@ public class Pedido extends Base {
     @Enumerated(EnumType.STRING)
     private EstadoPedido estado;
 
+
+    @NotNull
+    @Column(name = "estado_pago")
+    @Enumerated(EnumType.STRING)
+    private EstadoPagoPedido estadoPago;
+
     @NotNull
     @Column(name = "tipo_envio")
     @Enumerated(EnumType.STRING)
@@ -61,7 +68,7 @@ public class Pedido extends Base {
 
     @NotNull
     @OneToMany
-    @JoinColumn(name="id_detalle_dedido")
+    @JoinColumn(name="id_detalle_pedido")
     private List<DetallePedido> detallePedido;
 
     @ManyToOne

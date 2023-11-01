@@ -10,7 +10,7 @@ import org.antlr.v4.runtime.misc.NotNull;
 import java.util.Date;
 
 @Entity
-@Table(name = "receta")
+@Table(name = "Receta")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -18,26 +18,25 @@ import java.util.Date;
 public class Receta extends Base{
 
     @NotNull
-    @Column(name = "numero")
+    @Column(name = "numReceta")
     private int numReceta;
 
     @NotNull
-    @Column(name = "descripcion")
+    @Column(name = "descripcionReceta")
     private String descripcionReceta;
 
     @NotNull
-    @Column(name = "nombre")
+    @Column(name = "nombreReceta")
     private String nombreReceta;
 
     @NotNull
     @Column(name = "instruccion")
     private String instruccion;
 
-    @Column(name = "duracion")
-    @Temporal(TemporalType.TIMESTAMP)
-    private double duracionreceta;
+    @Column(name = "duracionReceta")
+    private int duracionReceta;
 
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = true)
     @JoinColumn(name = "id_ingrediente_receta")
     private IngredienteReceta ingredienteReceta;
 }

@@ -10,13 +10,16 @@ import lombok.Setter;
 import org.antlr.v4.runtime.misc.NotNull;
 
 @Entity
-@Table(name = "localidad")
+@Table(name = "Localidad")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class Localidad  extends Base{
-    private int id_localidad;
+public class Localidad extends Base{
+
+    @NotNull
+    @Column(name = "nombreLocalidad")
+    private String nombreLocalidad;
 
     @NotNull
     @Column(precision = 4, name="CodigoPostal")
@@ -24,8 +27,4 @@ public class Localidad  extends Base{
 
     @Column(name = "descripcionLocalidad")
     private String descripcionLocalidad;
-
-    @NotNull
-    @Column(name = "nombreLocalidad")
-    private String nombreLocalidad;
 }

@@ -11,13 +11,16 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "rubro_articulo")
+@Table(name = "RubroIngrediente")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 public class RubroIngrediente extends Base {
 
+    @NotNull
+    @Column(name = "denominacion")
+    private String denominacion;
 
     @ManyToOne()
     @JoinColumn(name = "id_rubro_padre")
@@ -25,9 +28,6 @@ public class RubroIngrediente extends Base {
 
     @OneToMany(mappedBy = "rubroPadre")
     private List<RubroIngrediente> subRubros;
-
-    @NotNull
-    private String denominacion;
 
     public RubroIngrediente(String denominacion, RubroIngrediente rubroPadre) {
         this.denominacion = denominacion;

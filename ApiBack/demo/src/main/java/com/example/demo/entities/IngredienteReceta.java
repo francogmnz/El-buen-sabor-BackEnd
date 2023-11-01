@@ -8,12 +8,13 @@ import lombok.Setter;
 import org.antlr.v4.runtime.misc.NotNull;
 
 @Entity
-@Table(name = "ingrediente_receta")
+@Table(name = "IngredienteReceta")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class IngredienteReceta extends Base{
+public class IngredienteReceta extends Base {
+
     @NotNull
     @Column(name = "cantidadIR")
     private int cantidadIR;

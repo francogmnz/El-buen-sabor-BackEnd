@@ -7,9 +7,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
+
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping(path = "api/v1/Facturas")
+@RequestMapping(path = "api/v1/Factura")
 public class FacturaController extends BaseControllerImpl<Factura, FacturaServiceImpl>{
     @GetMapping("/search")
     public ResponseEntity<?> search(@RequestParam String filtro) {

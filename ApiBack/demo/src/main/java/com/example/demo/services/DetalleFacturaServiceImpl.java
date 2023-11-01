@@ -1,10 +1,8 @@
 package com.example.demo.services;
 
 import com.example.demo.entities.DetalleFactura;
-import com.example.demo.entities.Pedido;
-import com.example.demo.repository.BaseRepository;
+import com.example.demo.repository.*;
 import com.example.demo.repository.DetalleFacturaRepository;
-import com.example.demo.repository.PedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,41 +10,31 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class DetalleFacturaServiceImpl extends BaseServiceImpl<DetalleFactura, Long> implements DetalleFacturaService {
-
+public class DetalleFacturaServiceImpl extends BaseServiceImpl<DetalleFactura,Long> implements DetalleFacturaService {
     @Autowired
-    private DetalleFacturaRepository detalleFacturaRepository;
-    public DetalleFacturaServiceImpl(BaseRepository<DetalleFactura, Long> baseRepository, DetalleFacturaRepository detalleFacturaRepository) {
+    private DetalleFacturaRepository detallefacturaRepository;
+    public DetalleFacturaServiceImpl(BaseRepository<DetalleFactura, Long> baseRepository, DetalleFacturaRepository detallefacturaRepository) {
         super(baseRepository);
-        this.detalleFacturaRepository = detalleFacturaRepository;
+        this.detallefacturaRepository = detallefacturaRepository;
     }
     @Override
-    public List<DetalleFactura> findAll() throws Exception {
-        return null;
+    public List<DetalleFactura> search(int filtro) throws Exception {
+        try {
+            List<DetalleFactura> detallesfactura = detallefacturaRepository.searchNativo(filtro);
+
+            return detallesfactura;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
     }
 
     @Override
-    public Page<DetalleFactura> findAll(Pageable pageable) throws Exception {
-        return null;
-    }
+    public Page<DetalleFactura> search(int filtro, Pageable pageable) throws Exception {
+        try {
+            Page<DetalleFactura> detallefactura = detallefacturaRepository.searchNativo(filtro, pageable);
 
-    @Override
-    public DetalleFactura findById(Long aLong) throws Exception {
-        return null;
-    }
-
-    @Override
-    public DetalleFactura save(DetalleFactura entity) throws Exception {
-        return null;
-    }
-
-    @Override
-    public DetalleFactura update(Long aLong, DetalleFactura entity) throws Exception {
-        return null;
-    }
-
-    @Override
-    public boolean delete(Long aLong) throws Exception {
-        return false;
-    }
-}
+            return detallefactura;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }}

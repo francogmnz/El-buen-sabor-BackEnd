@@ -1,60 +1,45 @@
 package com.example.demo.services;
 
+import com.example.demo.entities.Ingrediente;
+import com.example.demo.entities.Receta;
 import com.example.demo.entities.RubroIngrediente;
 import com.example.demo.repository.BaseRepository;
+import com.example.demo.repository.RecetaRepository;
 import com.example.demo.repository.RubroIngredienteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class RubroIngredienteServiceImpl extends BaseServiceImpl<RubroIngrediente, Long> implements BaseService<RubroIngrediente, Long> {
+public class RubroIngredienteServiceImpl extends BaseServiceImpl<RubroIngrediente, Long> implements RubroIngredienteService {
 
-    private final RubroIngredienteRepository rubroIngredienteRepository;
-
-    public RubroIngredienteServiceImpl(BaseRepository<RubroIngrediente, Long> baseRepository, RubroIngredienteRepository rubroIngredienteRepository) {
+    @Autowired
+    private RubroIngredienteRepository rubroingredienteRepository;
+    public RubroIngredienteServiceImpl(BaseRepository<RubroIngrediente, Long> baseRepository, RubroIngredienteRepository rubroingredienteRepository) {
         super(baseRepository);
-        this.rubroIngredienteRepository = rubroIngredienteRepository;
+        this.rubroingredienteRepository = rubroingredienteRepository;
     }
 
-    @Override
-    public List<RubroIngrediente> findAll() throws Exception {
-        // Implementación para buscar todos los rubros de ingredientes en la base de datos
-        return rubroIngredienteRepository.findAll();
-    }
+    public List<RubroIngrediente> search(String filtro) throws Exception {
+        try {
+            List<RubroIngrediente> rubroingrediente = rubroingredienteRepository.searchNativo(filtro);
 
-    @Override
-    public RubroIngrediente findById(Long id) throws Exception {
-        // Implementación para buscar un rubro de ingrediente por su ID
-        return rubroIngredienteRepository.findById(id).orElse(null);
-    }
-
-    @Override
-    public RubroIngrediente save(RubroIngrediente entity) throws Exception {
-        // Implementación para guardar un rubro de ingrediente en la base de datos
-        return rubroIngredienteRepository.save(entity);
-    }
-
-    @Override
-    public RubroIngrediente update(Long id, RubroIngrediente entity) throws Exception {
-        // Implementación para actualizar un rubro de ingrediente existente por su ID
-        RubroIngrediente existingRubroIngrediente = rubroIngredienteRepository.findById(id).orElse(null);
-        if (existingRubroIngrediente != null) {
-            // Realizar las actualizaciones necesarias en existingRubroIngrediente
-            // Luego, guardar el rubro de ingrediente actualizado
-            return rubroIngredienteRepository.save(existingRubroIngrediente);
+            return rubroingrediente;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
         }
-        return null;
     }
 
-    @Override
-    public boolean delete(Long id) throws Exception {
-        // Implementación para eliminar un rubro de ingrediente por su ID
-        RubroIngrediente existingRubroIngrediente = rubroIngredienteRepository.findById(id).orElse(null);
-        if (existingRubroIngrediente != null) {
-            rubroIngredienteRepository.delete(existingRubroIngrediente);
-            return true;
+    public Page<RubroIngrediente> search(String filtro, Pageable pageable) throws Exception {
+        try {
+            Page<RubroIngrediente> rubroingrediente = rubroingredienteRepository.searchNativo(filtro, pageable);
+
+            return rubroingrediente;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
         }
-        return false;
-    }
-}
+    }}
+

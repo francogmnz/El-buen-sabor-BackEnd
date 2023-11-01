@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "factura")
+@Table(name = "Factura")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -38,15 +38,12 @@ public class Factura extends Comprobante {
     private String mpPaymentType;
 
     @NotNull
+    @Column(name = "forma_pago")
+    @Enumerated(EnumType.STRING)
     private FormaPago formaPago;
 
     @NotNull
     @Column(name = "total_venta", precision = 10, scale = 2)
     private BigDecimal totalVenta;
-
-    @NotNull
-    @OneToMany
-    @JoinColumn(name="id_detalle_factura")
-    private List<DetalleFactura> detalleFactura;
 
 }
