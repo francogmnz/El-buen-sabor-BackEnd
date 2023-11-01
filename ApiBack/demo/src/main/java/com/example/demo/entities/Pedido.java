@@ -1,6 +1,7 @@
 package com.example.demo.entities;
 
 
+import com.example.demo.enums.EstadoPagoPedido;
 import com.example.demo.enums.EstadoPedido;
 import com.example.demo.enums.FormaPago;
 import com.example.demo.enums.TipoEnvio;
@@ -44,6 +45,12 @@ public class Pedido extends Base {
     @NotNull
     @Enumerated(EnumType.STRING)
     private EstadoPedido estado;
+
+
+    @NotNull
+    @Column(name = "estado_pago")
+    @Enumerated(EnumType.STRING)
+    private EstadoPagoPedido estadoPago;
 
     @NotNull
     @Column(name = "tipo_envio")
