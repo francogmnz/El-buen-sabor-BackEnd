@@ -13,4 +13,7 @@ import java.util.List;
 public interface DetallePedidoService extends BaseService<DetallePedido, Long>{
     List<DetallePedido> search(String filtro) throws Exception;
     Page<DetallePedido> search(String filtro, Pageable pageable) throws Exception;
+    Page<DetallePedido> searchdetail(int nroPedido, Pageable pageable) throws Exception;
+
+
 }

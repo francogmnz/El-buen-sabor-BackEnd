@@ -16,6 +16,12 @@ public interface PedidoRepository extends BaseRepository<Pedido, Long> {
     List<Pedido> findByFechaPedidoContaining(Date fechaPedido);
 
     Page<Pedido> findByFechaPedidoContaining(Date fechaPedido, Pageable pageable);
+    @Query(
+            value = "SELECT * FROM Pedido WHERE estado = 'PREPARACION'",
+            countQuery =  "SELECT count(*) FROM Pedido",
+            nativeQuery = true
+    )
+    Page<Pedido> searchpending(Pageable pageable);
 
     boolean existsByFechaPedido(Date fechaPedido);
 

@@ -31,6 +31,15 @@ public class RecetaServiceImpl extends BaseServiceImpl<Receta,Long> implements R
             throw new Exception(e.getMessage());
         }
     }
+    public List<Receta> searchO(int filtro) throws Exception {
+        try {
+            List<Receta> receta = recetaRepository.searchOne(filtro);
+
+            return receta;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
 
     public Page<Receta> search(int filtro, Pageable pageable) throws Exception {
         try {

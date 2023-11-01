@@ -2,6 +2,7 @@ package com.example.demo.services;
 
 
 import com.example.demo.entities.DetallePedido;
+import com.example.demo.entities.Pedido;
 import com.example.demo.repository.BaseRepository;
 import com.example.demo.repository.DetallePedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,4 +40,14 @@ public class DetallePedidoServiceImpl extends BaseServiceImpl<DetallePedido, Lon
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
-    }}
+    }
+    public Page<DetallePedido> searchdetail(int nroPedido, Pageable pageable) throws Exception {
+        try {
+            Page<DetallePedido> detallepedido = detallepedidoRepository.searchdetail(nroPedido, pageable);
+
+            return detallepedido;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+}
