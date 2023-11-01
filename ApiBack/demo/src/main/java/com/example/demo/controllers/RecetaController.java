@@ -19,6 +19,14 @@ public class RecetaController extends BaseControllerImpl<Receta, RecetaServiceIm
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
         }
     }
+    @GetMapping("/s/{id}")
+    public ResponseEntity<?> searchO(@PathVariable int id) {
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.searchO(id));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
+        }
+    }
 
     @GetMapping("/searchPaged")
     public ResponseEntity<?> search(@RequestParam int filtro, Pageable pageable) {

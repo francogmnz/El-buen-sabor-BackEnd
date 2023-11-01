@@ -29,5 +29,13 @@ public class DetallePedidoController extends BaseControllerImpl<DetallePedido, D
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
         }
     }
+    @GetMapping("/searchdetail/{nroPedido}")
+    public ResponseEntity<?> search(@PathVariable int nroPedido, Pageable pageable) {
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.searchdetail(nroPedido, pageable));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
+        }
+    }
 }
 

@@ -24,12 +24,17 @@ public interface RecetaRepository extends BaseRepository<Receta, Long> {
 
     //Anotación
     @Query(
-            value = "SELECT * FROM Receta WHERE Receta.numReceta LIKE '%?1%'",
+            value = "SELECT * FROM Receta WHERE Receta.num_receta = :filtro ",
             nativeQuery = true
     )
-    List<Receta> searchNativo(int filtro);
+    List<Receta> searchNativo(@Param("filtro") int filtro);
     @Query(
-            value = "SELECT * FROM Receta WHERE Receta.numReceta LIKE '%?1%'",
+            value = "SELECT * FROM Receta WHERE Receta.num_receta = :filtro ",
+            nativeQuery = true
+    )
+    List<Receta> searchOne(@Param("filtro") int filtro);
+    @Query(
+            value = "SELECT * FROM Receta WHERE Receta.num_receta LIKE '%?1%'",
             countQuery = "SELECT count(*) FROM Receta",
             nativeQuery = true
     )
