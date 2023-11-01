@@ -38,4 +38,10 @@ public interface PedidoRepository extends BaseRepository<Pedido, Long> {
     )
     Page<Pedido> searchNativo(Date filtro, Pageable pageable);
 
+    //HU 16
+    @Query(
+            value = "SELECT * FROM Pedido WHERE Pedido.estado = 'EN_CAMINO'",
+            nativeQuery = true
+    )
+    List<Pedido> pedidoDelivery();
 }
