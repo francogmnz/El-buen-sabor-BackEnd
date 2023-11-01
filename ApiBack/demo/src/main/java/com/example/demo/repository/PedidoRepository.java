@@ -18,7 +18,7 @@ public interface PedidoRepository extends BaseRepository<Pedido, Long> {
     Page<Pedido> findByFechaPedidoContaining(Date fechaPedido, Pageable pageable);
     @Query(
             value = "SELECT * FROM Pedido WHERE estado = 'PREPARACION'",
-            countQuery =  "SELECT count(*) FROM Pedido",
+            countQuery =  "SELECT count(*) FROM Pedido WHERE estado = 'PREPARACION'",
             nativeQuery = true
     )
     Page<Pedido> searchpending(Pageable pageable);
@@ -38,4 +38,10 @@ public interface PedidoRepository extends BaseRepository<Pedido, Long> {
     )
     Page<Pedido> searchNativo(Date filtro, Pageable pageable);
 
+    //HU 16
+    @Query(
+            value = "SELECT * FROM Pedido WHERE Pedido.estado = 'EN_CAMINO'",
+            nativeQuery = true
+    )
+    List<Pedido> pedidoDelivery();
 }

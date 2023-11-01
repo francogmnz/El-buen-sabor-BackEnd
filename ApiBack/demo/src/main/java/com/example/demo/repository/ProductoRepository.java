@@ -55,4 +55,5 @@ public interface ProductoRepository extends BaseRepository<Producto, Long> {
             @Param("nombreCategoria") String nombreCategoria,
             Pageable pageable
     );
+
 }
