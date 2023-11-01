@@ -37,13 +37,13 @@ public class Ingrediente extends Base {
     @Column(name = "stock_minimo", precision = 10, scale = 2)
     private BigDecimal stockMinimo;
 
-    @NotNull
-    @ManyToOne(optional = false)
+
+    @ManyToOne(cascade = CascadeType.REFRESH)
     @JoinColumn(name = "id_unidad_medida")
     private UnidadMedida unidadMedida;
 
-    @NotNull
-    @ManyToOne(optional = false)
+
+    @ManyToOne(cascade = CascadeType.REFRESH)
     @JoinColumn(name = "id_rubro_articulo")
     private RubroIngrediente rubroIngrediente;
 
