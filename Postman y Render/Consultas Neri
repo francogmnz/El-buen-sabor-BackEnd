@@ -882,7 +882,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"denominacion\": \"Curcuma\",\r\n    \"urlImagen\": \"curcuma.jpg\",\r\n    \"precioCompra\": 445,\r\n    \"stockActual\": 400,\r\n    \"stockMinimo\": 300\r\n}",
+							"raw": "{\r\n    \"denominacion\": \"Quesito\",\r\n    \"urlImagen\": \"curcuma.jpg\",\r\n    \"precioCompra\": 445.32,\r\n    \"stockActual\": 299.22,\r\n    \"stockMinimo\": 300.33,\r\n    \"unidadMedida\": {\r\n      \"id\": 1,\r\n      \"denominacion\": \"kilogramos\",\r\n      \"abreviatura\": \"kgs\"\r\n    },\r\n    \"rubroIngrediente\": {\r\n            \"denominacion\": \"Dulce\",\r\n            \"id\": 2\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -943,7 +943,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9000/api/v1/Ingrediente",
+							"raw": "http://localhost:9000/api/v1/Ingrediente/bajoStock",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -952,7 +952,8 @@
 							"path": [
 								"api",
 								"v1",
-								"Ingrediente"
+								"Ingrediente",
+								"bajoStock"
 							]
 						}
 					},
@@ -2111,7 +2112,17 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "http://localhost:9000/api/v1/UnidadMedida",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"UnidadMedida"
+							]
 						}
 					},
 					"response": []

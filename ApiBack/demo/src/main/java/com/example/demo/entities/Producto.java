@@ -45,11 +45,11 @@ public class Producto extends Base {
     private Receta receta;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "id_rubro_Producto")
+    @JoinColumn(name = "id_rubro_producto")
     private RubroProducto rubroProducto;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name= "id_detalleFactura")
+    @JoinColumn(name= "id_detalle_factura")
     private List<DetalleFactura> detallesfactura = new ArrayList<DetalleFactura>();
 
 
