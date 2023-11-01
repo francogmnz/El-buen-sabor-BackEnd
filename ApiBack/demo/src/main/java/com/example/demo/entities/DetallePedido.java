@@ -10,7 +10,7 @@ import org.antlr.v4.runtime.misc.NotNull;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "detalle_pedido")
+@Table(name = "DetallePedido")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -18,6 +18,7 @@ import java.math.BigDecimal;
 public class DetallePedido extends Base {
 
     @NotNull
+    @Column(name = "cantidad")
     private Integer cantidad;
 
     @NotNull

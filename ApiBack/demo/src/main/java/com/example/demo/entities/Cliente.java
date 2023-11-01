@@ -11,19 +11,23 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "cliente")
+@Table(name = "Cliente")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 public class Cliente extends Base {
 
+    @Column(name = "nombre")
     private String nombre;
 
+    @Column(name = "apellido")
     private String apellido;
 
+    @Column(name = "telefono")
     private String telefono;
 
+    @Column(name = "email")
     private String email;
 
     @OneToOne
@@ -32,9 +36,10 @@ public class Cliente extends Base {
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "id_domicilio")
-    private List<Domicilio> domicilio = new ArrayList<Domicilio>();
+    private List<Domicilio> domicilios = new ArrayList<Domicilio>();
+
     @OneToMany (cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn (name = "id-pedido")
-    private List<Pedido> pedido= new ArrayList<Pedido>();
+    @JoinColumn (name = "id_pedido")
+    private List<Pedido> pedidos = new ArrayList<Pedido>();
 
 }

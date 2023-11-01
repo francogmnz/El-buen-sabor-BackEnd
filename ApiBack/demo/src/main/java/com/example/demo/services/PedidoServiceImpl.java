@@ -1,51 +1,77 @@
 package com.example.demo.services;
 
+import com.example.demo.entities.Ingrediente;
+import com.example.demo.entities.OrdenCompra;
 import com.example.demo.entities.Pedido;
 import com.example.demo.entities.Receta;
+import com.example.demo.enums.EstadoPedido;
 import com.example.demo.repository.BaseRepository;
+import com.example.demo.repository.OrdenCompraRepository;
 import com.example.demo.repository.PedidoRepository;
 import com.example.demo.repository.RecetaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
-
-public class PedidoServiceImpl extends BaseServiceImpl< Pedido,Long> implements BaseService<Pedido, Long> {
-
+@Service
+public class PedidoServiceImpl extends BaseServiceImpl<Pedido,Long> implements PedidoService {
     @Autowired
     private PedidoRepository pedidoRepository;
     public PedidoServiceImpl(BaseRepository<Pedido, Long> baseRepository, PedidoRepository pedidoRepository) {
         super(baseRepository);
         this.pedidoRepository = pedidoRepository;
     }
-    @Override
-    public List<Pedido> findAll() throws Exception {
-        return null;
+
+
+    public List<Pedido> search(Date filtro) throws Exception {
+        try {
+            List<Pedido> pedido = pedidoRepository.searchNativo(filtro);
+
+            return pedido;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+    public Page<Pedido> searchpending(Pageable pageable) throws Exception {
+        try {
+            Page<Pedido> pedido = pedidoRepository.searchpending(pageable);
+
+            return pedido;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
     }
 
-    @Override
-    public Page<Pedido> findAll(Pageable pageable) throws Exception {
-        return null;
-    }
 
-    @Override
-    public Pedido findById(Long aLong) throws Exception {
-        return null;
-    }
+    public Page<Pedido> search(Date filtro, Pageable pageable) throws Exception {
+        try {
+            Page<Pedido> pedido = pedidoRepository.searchNativo(filtro, pageable);
 
-    @Override
-    public Pedido save(Pedido entity) throws Exception {
-        return null;
+            return pedido;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
     }
+    public List<Pedido> searchCajero(String filtroc ) throws Exception {
+        try {
+            List<Pedido> pedido = pedidoRepository.searchCajero(filtroc );
 
-    @Override
-    public Pedido update(Long aLong, Pedido entity) throws Exception {
-        return null;
+            return pedido;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
     }
+    public List<Pedido> searchbyid(Integer filtroid ) throws Exception {
+        try {
+            List<Pedido> pedido = pedidoRepository.searchbyid(filtroid );
 
-    @Override
-    public boolean delete(Long aLong) throws Exception {
-        return false;
+            return pedido;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
     }
 }

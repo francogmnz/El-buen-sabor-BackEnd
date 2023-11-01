@@ -13,13 +13,13 @@ import java.util.Date;
 
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-@Table(name = "comprobante")
+@Table(name = "Comprobante")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 public class Comprobante extends Base {
+
     @NotNull
     private String numero;
     @NotNull

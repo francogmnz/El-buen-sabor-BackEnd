@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "domicilio")
+@Table(name = "Domicilio")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -20,16 +20,12 @@ import java.util.List;
 public class Domicilio extends Base {
 
     @NotNull
-    @Column(length = 500)
+    @Column(name = "calle", length = 500)
     private String calle;
 
     @NotNull
-    @Column(precision = 5)
+    @Column(name = "numero", precision = 5)
     private Integer numero;
-
-    @NotNull
-    @Column(precision = 4)
-    private Integer codigoPostal;
 
     @Column(name = "numero_vivienda")
     private Integer numeroDpto;
@@ -37,7 +33,7 @@ public class Domicilio extends Base {
     @Column(name = "piso_vivienda")
     private Integer pisoDpto;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @ManyToOne()
     @JoinColumn(name = "id_localidad")
-    private List<Localidad> localidad = new ArrayList<Localidad>();
+    private Localidad localidad;
 }

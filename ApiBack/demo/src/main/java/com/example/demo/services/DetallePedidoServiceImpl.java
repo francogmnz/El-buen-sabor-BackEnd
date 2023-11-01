@@ -1,62 +1,53 @@
 package com.example.demo.services;
 
+
 import com.example.demo.entities.DetallePedido;
+import com.example.demo.entities.Pedido;
 import com.example.demo.repository.BaseRepository;
 import com.example.demo.repository.DetallePedidoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
 @Service
-public class DetallePedidoServiceImpl extends BaseServiceImpl<DetallePedido,Long> implements DetallePedidoService{
+public class DetallePedidoServiceImpl extends BaseServiceImpl<DetallePedido, Long> implements DetallePedidoService {
 
-    private final DetallePedidoRepository detallePedidoRepository;
-    public DetallePedidoServiceImpl(BaseRepository<DetallePedido,Long> baseRepository){
-
+    @Autowired
+    private DetallePedidoRepository detallepedidoRepository;
+    public DetallePedidoServiceImpl(BaseRepository<DetallePedido, Long> baseRepository, DetallePedidoRepository detallepedidoRepository) {
         super(baseRepository);
-        this.detallePedidoRepository = detallePedidoRepository;
+        this.detallepedidoRepository = detallepedidoRepository;
     }
 
+    public List<DetallePedido> search(String filtro) throws Exception {
+        try {
+            List<DetallePedido> detallespedido = detallepedidoRepository.searchNativo(filtro);
 
-    @Override
-    public List<DetallePedido> findAll() throws Exception {
-        // Implementación para buscar todos los rubros de ingredientes en la base de datos
-        return detallePedidoRepository.findAll();
-    }
-
-    @Override
-    public DetallePedido findById(Long id) throws Exception {
-        // Implementación para buscar un rubro de ingrediente por su ID
-        return detallePedidoRepository.findById(id).orElse(null);
-    }
-
-    @Override
-    public DetallePedido save(DetallePedido entity) throws Exception {
-        // Implementación para guardar un rubro de ingrediente en la base de datos
-        return detallePedidoRepository.save(entity);
-    }
-
-    @Override
-    public DetallePedido update(Long id, DetallePedido entity) throws Exception {
-        // Implementación para actualizar un rubro de ingrediente existente por su ID
-        DetallePedido existingDetallePedido = detallePedidoRepository.findById(id).orElse(null);
-        if (existingDetallePedido != null) {
-            // Realizar las actualizaciones necesarias en existingRubroIngrediente
-            // Luego, guardar el rubro de ingrediente actualizado
-            return detallePedidoRepository.save(existingDetallePedido);
+            return detallespedido;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
         }
-        return null;
     }
 
-    @Override
-    public boolean delete(Long id) throws Exception {
-        // Implementación para eliminar un rubro de ingrediente por su ID
-        DetallePedido existingDetallePedido = detallePedidoRepository.findById(id).orElse(null);
-        if (existingDetallePedido != null) {
-            detallePedidoRepository.delete(existingDetallePedido);
-            return true;
+    public Page<DetallePedido> search(String filtro, Pageable pageable) throws Exception {
+        try {
+            Page<DetallePedido> detallepedido = detallepedidoRepository.searchNativo(filtro, pageable);
+
+            return detallepedido;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
         }
-        return false;
+    }
+    public Page<DetallePedido> searchdetail(int nroPedido, Pageable pageable) throws Exception {
+        try {
+            Page<DetallePedido> detallepedido = detallepedidoRepository.searchdetail(nroPedido, pageable);
+
+            return detallepedido;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
     }
 }

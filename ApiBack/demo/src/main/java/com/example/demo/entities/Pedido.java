@@ -16,7 +16,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "pedido")
+@Table(name = "Pedido")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -61,7 +61,7 @@ public class Pedido extends Base {
 
     @NotNull
     @OneToMany
-    @JoinColumn(name="id_detalle_dedido")
+    @JoinColumn(name="id_detalle_pedido")
     private List<DetallePedido> detallePedido;
 
     @ManyToOne
