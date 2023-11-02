@@ -5,6 +5,7 @@ import com.example.demo.entities.Cliente;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -18,17 +19,17 @@ public interface ClienteRepository extends BaseRepository<Cliente, Long> {
 
 
     //Anotación JPQL parametros indexados
-    @Query(value = "SELECT c FROM Cliente c WHERE c.apellido LIKE '%?1%'")
-    List<Cliente> search(String filtro);
+    @Query(value = "SELECT c FROM Cliente c WHERE c.apellido LIKE %:filtro%")
+    List<Cliente> search(@Param("filtro")String filtro);
     @Query(value = "SELECT c FROM Cliente c WHERE c.apellido LIKE '%?1%'")
     Page<Cliente> search(String filtro, Pageable pageable);
 
     //Anotación
     @Query(
-            value = "SELECT * FROM Cliente WHERE cliente.apellido LIKE '%?1%'",
+            value = "SELECT * FROM Cliente WHERE cliente.apellido LIKE %:filtro%",
             nativeQuery = true
     )
-    List<Cliente> searchNativo(String filtro);
+    List<Cliente> searchNativo(@Param("filtro") String filtro);
     @Query(
             value = "SELECT * FROM cliente WHERE cliente.apellido LIKE '%?1%'",
             countQuery = "SELECT count(*) FROM cliente",
