@@ -35,9 +35,9 @@ public class PedidoServiceImpl extends BaseServiceImpl<Pedido,Long> implements P
             throw new Exception(e.getMessage());
         }
     }
-    public Page<Pedido> searchpending(Pageable pageable) throws Exception {
+    public Page<Pedido> searchstatus(String estado, Pageable pageable) throws Exception {
         try {
-            Page<Pedido> pedido = pedidoRepository.searchpending(pageable);
+            Page<Pedido> pedido = pedidoRepository.searchstatus(estado, pageable);
 
             return pedido;
         } catch (Exception e) {

@@ -25,18 +25,43 @@ public class PedidoController extends BaseControllerImpl<Pedido, PedidoServiceIm
         }
     }
 
-    @GetMapping("/search/pending")
-    public ResponseEntity<?> searchp(@PageableDefault(page = 0, size = 10)Pageable pageable) {
-        System.out.println("URL completa: " + ServletUriComponentsBuilder.fromCurrentRequest().toUriString());
-        System.out.println("Page: " + pageable.getPageNumber());
-        System.out.println("Size: " + pageable.getPageSize());
+    @GetMapping("/search/status/pending")
+    public ResponseEntity<?> searchpending(@PageableDefault(page = 0, size = 10)Pageable pageable) {
         try {
-            System.out.println("Estoy andando");
-            return ResponseEntity.status(HttpStatus.OK).body(servicio.searchpending(pageable));
+            String estado = "PREPARACION";
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.searchstatus(estado,pageable));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
         }
     }
+    @GetMapping("/search/status/completed")
+    public ResponseEntity<?> searchcompleted(@PageableDefault(page = 0, size = 10)Pageable pageable) {
+        try {
+            String estado = "COMPLETADO";
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.searchstatus(estado,pageable));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
+        }
+    }
+    @GetMapping("/search/status/canceled")
+    public ResponseEntity<?> searchcanceled(@PageableDefault(page = 0, size = 10)Pageable pageable) {
+        try {
+            String estado = "CANCELADO";
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.searchstatus(estado,pageable));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
+        }
+    }
+    @GetMapping("/search/status/ontheway")
+    public ResponseEntity<?> searchontheway(@PageableDefault(page = 0, size = 10)Pageable pageable) {
+        try {
+            String estado = "EN_CAMINO";
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.searchstatus(estado,pageable));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
+        }
+    }
+
     @GetMapping("/searchPaged")
     public ResponseEntity<?> search(@RequestParam Date filtro, Pageable pageable) {
         try {

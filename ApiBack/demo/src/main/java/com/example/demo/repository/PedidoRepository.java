@@ -6,6 +6,7 @@ import com.example.demo.entities.Pedido;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.Date;
@@ -17,11 +18,11 @@ public interface PedidoRepository extends BaseRepository<Pedido, Long> {
 
     Page<Pedido> findByFechaPedidoContaining(Date fechaPedido, Pageable pageable);
     @Query(
-            value = "SELECT * FROM Pedido WHERE estado = 'PREPARACION'",
+            value = "SELECT * FROM Pedido WHERE estado = :estado",
             countQuery =  "SELECT count(*) FROM Pedido WHERE estado = 'PREPARACION'",
             nativeQuery = true
     )
-    Page<Pedido> searchpending(Pageable pageable);
+    Page<Pedido> searchstatus(@Param("estado")String estado, Pageable pageable);
 
     boolean existsByFechaPedido(Date fechaPedido);
 
