@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 @Service
 public class ProductoServiceImpl extends BaseServiceImpl<Producto, Long> implements ProductoService{
@@ -81,9 +82,10 @@ public class ProductoServiceImpl extends BaseServiceImpl<Producto, Long> impleme
         }
     }
     @Override
-    public List<ProductosMasVendidosDTO> searchBestSelling() throws Exception {
+    @Transactional
+    public List<ProductosMasVendidosDTO> searchBestSelling(Date fechaInicio, Date fechaFin) throws Exception {
         try {
-            List<Object[]> results = productoRepository.searchBestSelling();
+            List<Object[]> results = productoRepository.searchBestSelling(fechaInicio, fechaFin);
             List<ProductosMasVendidosDTO> dtos = new ArrayList<>();
 
             for (Object[] result : results) {

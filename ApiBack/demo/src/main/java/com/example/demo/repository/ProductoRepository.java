@@ -4,12 +4,12 @@ import com.example.demo.dtos.ProductosMasVendidosDTO;
 import com.example.demo.entities.Producto;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -62,5 +62,5 @@ public interface ProductoRepository extends BaseRepository<Producto, Long> {
             "JOIN producto p WHERE d.id_producto = p.id " +
             "GROUP BY p.DENOMINACION, p.URL_IMAGEN " +
             "ORDER BY totalVendido DESC LIMIT 5", nativeQuery = true)
-    List<Object[]> searchBestSelling();
+    List<Object[]> searchBestSelling(Date fechaInicio, Date fechaFin);
 }
