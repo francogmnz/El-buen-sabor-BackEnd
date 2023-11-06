@@ -1,0 +1,31 @@
+{
+    "nombre": "Juan",
+    "apellido": "Martinez",
+    "telefono": 523455,
+    "email": "juan4@gmail.com",
+    "pedidos": [{
+        "fechaPedido": "2023-10-03",
+        "horaEstimadaFinalizacion": "2023-10-03",
+        "total": "4500",
+        "totalCosto": "3000",
+        "estado": "EN_CAMINO",
+        "tipoEnvio": "DELIVERY",
+        "formaPago": "MERCADO_PAGO"
+    },{
+        "fechaPedido": "2023-10-03",
+        "horaEstimadaFinalizacion": "2023-10-03",
+        "total": "4600",
+        "totalCosto": "4000",
+        "estado": "EN_CAMINO",
+        "tipoEnvio": "DELIVERY",
+        "formaPago": "MERCADO_PAGO"
+    },{
+        "fechaPedido": "2023-10-03",
+        "horaEstimadaFinalizacion": "2023-10-03",
+        "total": "6000",
+        "totalCosto": "5000",
+        "estado": "CANCELADO",
+        "tipoEnvio": "DELIVERY",
+        "formaPago": "MERCADO_PAGO"
+    }]
+}

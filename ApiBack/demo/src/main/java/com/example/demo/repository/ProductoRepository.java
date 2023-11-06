@@ -16,7 +16,8 @@ import java.util.List;
 public interface ProductoRepository extends BaseRepository<Producto, Long> {
     //query
     @Query(
-            value = "SELECT * FROM Producto p WHERE p.nombre_producto LIKE %:filtro%",
+            value = "SELECT * FROM Producto p WHERE p.denominacion LIKE %:filtro%",
+            countQuery =  "SELECT count(*) FROM Producto p WHERE p.denominacion LIKE %:filtro%",
             nativeQuery = true
     )
     Page<Producto> searchByNombre(

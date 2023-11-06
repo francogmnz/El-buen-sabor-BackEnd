@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(path = "api/v1/Cliente")
 public class ClienteController extends BaseControllerImpl<Cliente, ClienteServiceImpl> {
 
-    @GetMapping("/search")
-    public ResponseEntity<?> search(@RequestParam String filtro) {
+    @GetMapping("/searchByName")
+    public ResponseEntity<?> searchNativo(@RequestParam String filtro) {
         try {
             return ResponseEntity.status(HttpStatus.OK).body(servicio.search(filtro));
         } catch (Exception e) {
