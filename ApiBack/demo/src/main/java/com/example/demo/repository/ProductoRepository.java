@@ -1,5 +1,6 @@
 package com.example.demo.repository;
 
+import com.example.demo.dtos.ProductosMasVendidosDTO;
 import com.example.demo.entities.Producto;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -56,4 +57,10 @@ public interface ProductoRepository extends BaseRepository<Producto, Long> {
             Pageable pageable
     );
 
+    @Query(value = "SELECT p.DENOMINACION, p.URL_IMAGEN,SUM(d.cantidad) as totalVendido " +
+            "FROM DETALLE_PEDIDO d " +
+            "JOIN producto p WHERE d.id_producto = p.id " +
+            "GROUP BY p.DENOMINACION, p.URL_IMAGEN " +
+            "ORDER BY totalVendido DESC LIMIT 5", nativeQuery = true)
+    List<Object[]> searchBestSelling();
 }

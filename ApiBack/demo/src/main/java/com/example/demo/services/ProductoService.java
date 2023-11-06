@@ -1,5 +1,6 @@
 package com.example.demo.services;
 
+import com.example.demo.dtos.ProductosMasVendidosDTO;
 import com.example.demo.entities.Producto;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -18,6 +19,8 @@ public interface ProductoService extends BaseService<Producto, Long>{
     Page<Producto> searchByPrecioVentaRange(BigDecimal precioMinimo, BigDecimal precioMaximo, Pageable pageable) throws Exception;
 
     Page<Producto> searchByCategoriaNombre(String nombreCategoria, Pageable pageable) throws Exception;
+
+    List<ProductosMasVendidosDTO> searchBestSelling() throws Exception;
 
 }
 

@@ -1,10 +1,8 @@
 package com.example.demo.services;
 
-import com.example.demo.entities.Ingrediente;
-import com.example.demo.entities.Pedido;
+import com.example.demo.dtos.ProductosMasVendidosDTO;
 import com.example.demo.entities.Producto;
 import com.example.demo.repository.BaseRepository;
-import com.example.demo.repository.PedidoRepository;
 import com.example.demo.repository.ProductoRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 @Service
 public class ProductoServiceImpl extends BaseServiceImpl<Producto, Long> implements ProductoService{
@@ -81,4 +80,24 @@ public class ProductoServiceImpl extends BaseServiceImpl<Producto, Long> impleme
             throw new Exception(e.getMessage());
         }
     }
+    @Override
+    public List<ProductosMasVendidosDTO> searchBestSelling() throws Exception {
+        try {
+            List<Object[]> results = productoRepository.searchBestSelling();
+            List<ProductosMasVendidosDTO> dtos = new ArrayList<>();
+
+            for (Object[] result : results) {
+                String denominacion = (String) result[0];
+                String urlImagen = (String) result[1];
+                Long totalVendido = (Long) result[2];
+
+                dtos.add(new ProductosMasVendidosDTO(denominacion, urlImagen, totalVendido));
+            }
+
+            return dtos;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+
 }

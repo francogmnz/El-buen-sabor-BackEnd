@@ -59,6 +59,14 @@ public class ProductoController extends BaseControllerImpl<Producto, ProductoSer
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
         }
     }
+    @GetMapping("/searchBestSelling")
+    public ResponseEntity<?> searchBestSelling() {
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.searchBestSelling());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
+        }
+    }
 
 
 
