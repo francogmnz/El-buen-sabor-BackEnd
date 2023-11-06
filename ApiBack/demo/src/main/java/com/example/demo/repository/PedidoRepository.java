@@ -39,9 +39,10 @@ public interface PedidoRepository extends BaseRepository<Pedido, Long> {
     Page<Pedido> searchNativo(Date filtro, Pageable pageable);
 
     //HU 16
+    //Uso Page por la gran cantidad de pedidos que se podrian instanciar
     @Query(
-            value = "SELECT * FROM Pedido WHERE Pedido.estado = 'EN_CAMINO'",
+            value = "SELECT p,c,dp FROM Pedido p JOIN p.cliente c JOIN p.detallepedido dp WHERE Pedido.estado = 'EN_CAMINO'",
             nativeQuery = true
     )
-    List<Pedido> pedidoDelivery();
+    Page<Pedido> pedidoDelivery(Pageable pageable);
 }

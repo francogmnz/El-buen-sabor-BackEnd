@@ -6,13 +6,11 @@ import com.example.demo.enums.EstadoPedido;
 import com.example.demo.enums.FormaPago;
 import com.example.demo.enums.TipoEnvio;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -22,6 +20,7 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
+@Builder
 public class Pedido extends Base {
 
     @NotNull
@@ -67,9 +66,9 @@ public class Pedido extends Base {
     private Domicilio domicilio;
 
     @NotNull
-    @OneToMany
+    @OneToMany (cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name="id_detalle_pedido")
-    private List<DetallePedido> detallePedido;
+    private List<DetallePedido> detallePedido = new ArrayList<DetallePedido>();
 
     @ManyToOne
     @JoinColumn(name = "id_comprobante")

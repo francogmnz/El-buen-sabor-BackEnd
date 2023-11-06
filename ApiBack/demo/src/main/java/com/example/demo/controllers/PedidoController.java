@@ -47,10 +47,10 @@ public class PedidoController extends BaseControllerImpl<Pedido, PedidoServiceIm
     }
 
     @GetMapping("/pedidoDelivery")
-    public ResponseEntity<?> pedidoDelivery() {
+    public ResponseEntity<?> pedidoDelivery(Pageable pageable) {
         try {
             System.out.println("PedidoDelivery Andando");
-            return ResponseEntity.status(HttpStatus.OK).body(servicio.pedidoDelivery());
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.pedidoDelivery(pageable));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
         }

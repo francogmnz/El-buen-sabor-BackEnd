@@ -56,9 +56,9 @@ public class PedidoServiceImpl extends BaseServiceImpl<Pedido,Long> implements P
         }
     }
 
-    public List<Pedido> pedidoDelivery() throws Exception {
+    public Page<Pedido> pedidoDelivery(Pageable pageable) throws Exception {
         try {
-            List<Pedido> pedido = pedidoRepository.pedidoDelivery();
+            Page<Pedido> pedido = pedidoRepository.pedidoDelivery(pageable);
             return pedido;
         } catch (Exception e) {
             throw new Exception(e.getMessage());
