@@ -13,6 +13,7 @@ import lombok.Setter;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
@@ -74,6 +75,11 @@ public class Pedido extends Base {
     @ManyToOne
     @JoinColumn(name = "id_comprobante")
     private Comprobante comprobante;
+
+    @PrePersist
+    protected void onPersist() {
+        fechaPedido = new Date(System.currentTimeMillis());
+    }
 
 
 }
