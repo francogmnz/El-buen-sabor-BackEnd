@@ -61,7 +61,7 @@ public class ClienteServiceImpl extends BaseServiceImpl<Cliente,Long> implements
     public List<DTORankingClientes> searchRankingClientes(Date fecha1, Date fecha2) throws Exception {
         {
             try {
-                return clienteRepository.searchRankingClientes();
+                return clienteRepository.searchRankingClientes(fecha1, fecha2);
             } catch (Exception e) {
                 throw new Exception(e.getMessage());
             }

@@ -15,9 +15,6 @@ import java.util.List;
 public interface FacturaService extends BaseService<Factura,Long>{
 
     //FALTA CONFIGURAR TODA ESTA CLASE (SU IMPL)
-    List<Factura> search(String filtro) throws Exception;
-    Page<Factura> search(String filtro, Pageable pageable) throws Exception;
-    public DTOMovimientoMonetarios getFacturasByFecha(String fechaDesde, String fechaHasta) throws Exception;
-
+    List<DTOMovimientoMonetarios> getFacturasByFecha(Date fechaDesde, Date fechaHasta) throws Exception;
 
 }

@@ -15,12 +15,7 @@ import java.math.BigDecimal;
         private int cantPedidos;
         private BigDecimal importeTotal;
 
-    public DTORankingClientes(String nombre, String apellido, int cantPedidos, BigDecimal importeTotal) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.cantPedidos = cantPedidos;
-        this.importeTotal = importeTotal;
-    }
+   
 }
 
 

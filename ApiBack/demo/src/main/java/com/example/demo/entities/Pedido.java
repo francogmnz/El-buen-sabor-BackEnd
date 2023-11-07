@@ -14,6 +14,7 @@ import org.antlr.v4.runtime.misc.NotNull;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -75,6 +76,12 @@ public class Pedido extends Base {
     @ManyToOne
     @JoinColumn(name = "id_comprobante")
     private Comprobante comprobante;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @JoinColumn(name = "pedido_id")
+    List<DetallePedido> pedidoDetalles=new ArrayList<>();
+    public void setPedidoDetalles(List<DetallePedido> detallesPedido){
+        this.pedidoDetalles=detallesPedido;
+    }
 
     @PrePersist
     protected void onPersist() {

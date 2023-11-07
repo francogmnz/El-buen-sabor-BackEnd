@@ -38,8 +38,5 @@ public class Cliente extends Base {
     @JoinColumn(name = "id_domicilio")
     private List<Domicilio> domicilios = new ArrayList<Domicilio>();
 
-    @OneToMany (cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn (name = "id_pedido")
-    private List<Pedido> pedidos = new ArrayList<Pedido>();
 
 }

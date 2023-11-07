@@ -41,13 +41,13 @@ public interface ClienteRepository extends BaseRepository<Cliente, Long> {
     )
     Page<Cliente> searchNativo(String filtro, Pageable pageable);
     //Query de Ranking Cliente
-    @Query(value = "SELECT c.id AS clienteId, c.nombre AS clienteNombre, " +
-            "COUNT(p.id) AS cantidadPedidos, " +
-            "SUM(p.total) AS importeTotal " +
-            "FROM Cliente c " +
-            "LEFT JOIN Pedido p ON c.id = p.cliente.id " +
-            "GROUP BY c.id, c.nombre " +
-            "ORDER BY cantidadPedidos DESC", nativeQuery = true)
-    List<DTORankingClientes> searchRankingClientes();
+    @Query(value = "SELECT c.id AS clienteId, c.nombre AS clienteNombre, \n" +
+            "       COUNT(p.id) AS cantidadPedidos, SUM(p.total) AS importeTotal\n" +
+            "FROM Cliente c\n" +
+            "LEFT JOIN Pedido\n" +
+            "WHERE fecha_Pedido BETWEEN :fecha1 AND :fecha2\n" +
+            "GROUP BY c.id, c.nombre\n" +
+            "ORDER BY cantidadPedidos DESC\n", nativeQuery = true)
+    List<DTORankingClientes> searchRankingClientes(@Param("fecha1")Date fecha1, @Param("fecha2") Date fecha2);
 
 }
