@@ -1,5 +1,6 @@
 package com.example.demo.services;
 
+import com.example.demo.dtos.DTOMovimientoMonetarios;
 import com.example.demo.entities.Cliente;
 import com.example.demo.entities.Factura;
 import org.springframework.data.domain.Page;
@@ -16,6 +17,7 @@ public interface FacturaService extends BaseService<Factura,Long>{
     //FALTA CONFIGURAR TODA ESTA CLASE (SU IMPL)
     List<Factura> search(String filtro) throws Exception;
     Page<Factura> search(String filtro, Pageable pageable) throws Exception;
+    public DTOMovimientoMonetarios getFacturasByFecha(String fechaDesde, String fechaHasta) throws Exception;
 
 
 }
