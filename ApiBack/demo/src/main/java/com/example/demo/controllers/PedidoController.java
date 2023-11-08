@@ -80,4 +80,49 @@ public class PedidoController extends BaseControllerImpl<Pedido, PedidoServiceIm
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
         }
     }
+
+    @GetMapping("/searchCajero")
+    public ResponseEntity<?> searchCajero(@RequestParam String filtroc){
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.searchCajero(filtroc));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
+        }
+    }
+    @PutMapping("/cambioCajero/{id}")
+    public ResponseEntity<?> cambioCajero(@PathVariable Long id, @RequestParam String cambio) {
+        try {
+            // Llama al servicio para realizar la operación de actualización
+            servicio.cambioCajero(id, cambio);
+            return ResponseEntity.status(HttpStatus.OK).body("Operación exitosa");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\": \"" + e.getMessage() + "\"}");
+        }
+    }
+
+   @PutMapping("/entregaCajero/{id}")
+    public ResponseEntity<?> entregaCajero(@PathVariable Long id,@RequestParam String cambio){
+        try {
+            servicio.entregaCajero(id, cambio);
+            return ResponseEntity.status(HttpStatus.OK).body("Operación exitosa");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
+        }
+    }    @GetMapping("/searchDelivery")
+    public ResponseEntity<?> searchDelivery(){
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.searchDelivery());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
+        }
+    }    @PutMapping("/entregaDelivery/{id}")
+    public ResponseEntity<?> entregaDelivery(@PathVariable Long id){
+        try {
+            servicio.entregaDelivery(id);
+            return ResponseEntity.status(HttpStatus.OK).body("Operación exitosa");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
+        }
+    }
+
 }

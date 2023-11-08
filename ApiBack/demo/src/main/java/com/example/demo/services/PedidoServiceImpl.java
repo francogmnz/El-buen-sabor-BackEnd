@@ -8,6 +8,7 @@ import com.example.demo.repository.BaseRepository;
 import com.example.demo.repository.OrdenCompraRepository;
 import com.example.demo.repository.PedidoRepository;
 import com.example.demo.repository.RecetaRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Page;
@@ -60,6 +61,55 @@ public class PedidoServiceImpl extends BaseServiceImpl<Pedido,Long> implements P
         try {
             List<Pedido> pedido = pedidoRepository.pedidoDelivery();
             return pedido;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+
+    public List<Pedido> searchCajero(String filtroc ) throws Exception {
+        try {
+            List<Pedido> pedido = pedidoRepository.searchCajero(filtroc );
+
+            return pedido;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+    @Transactional
+    public void cambioCajero(Long id, String cambio) throws Exception {
+        try {
+            // Realiza la operación de actualización llamando al método en el repositorio
+            pedidoRepository.cambioCajero(cambio);
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+    @Transactional
+
+    public void entregaCajero(Long id,String cambio ) throws Exception {
+        try {
+            pedidoRepository.entregaCajero(cambio);
+
+
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+    public List<Object[]> searchDelivery() throws Exception {
+        try {
+            List<Object[]> Object = pedidoRepository.searchDelivery();
+
+            return Object;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+    @Transactional
+    public void entregaDelivery(Long id) throws Exception {
+        try {
+             pedidoRepository.entregaDelivery();
+
+
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
