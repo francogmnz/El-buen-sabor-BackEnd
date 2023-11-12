@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping(path = "api/v1/Ingrediente")
+@RequestMapping(path = "api/v1/u.co")
 public class IngredienteController extends BaseControllerImpl<Ingrediente, IngredienteServiceImpl> {
     @GetMapping("/bajoStock")
     public ResponseEntity<?> bajoStock(String denominacion) {

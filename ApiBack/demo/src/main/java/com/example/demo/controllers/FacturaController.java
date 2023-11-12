@@ -11,7 +11,7 @@ import java.util.Date;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping(path = "api/v1/Factura")
+@RequestMapping(path = "api/v1/u.ca")
 public class FacturaController extends BaseControllerImpl<Factura, FacturaServiceImpl>{
     @GetMapping("/search")
     public ResponseEntity<?> search(@RequestParam String filtro) {
