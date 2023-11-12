@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping(path = "api/v1/u.c.ca")
+@RequestMapping(path = "api/v1/u.ca")
 public class ClienteController extends BaseControllerImpl<Cliente, ClienteServiceImpl> {
 
     @GetMapping("/searchByName")
