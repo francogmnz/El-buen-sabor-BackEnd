@@ -10,10 +10,11 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 
-public interface UsuarioRepository extends BaseRepository<Usuario, Long> {
+public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
 
     List<Usuario> findByUsernameContaining(String username);
 
@@ -42,4 +43,5 @@ public interface UsuarioRepository extends BaseRepository<Usuario, Long> {
     Page<Usuario> searchNativo(String filtro, Pageable pageable);
 
 
+    Optional<Usuario> findByUsername(@Param("username") String username);
 }
