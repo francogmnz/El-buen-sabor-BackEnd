@@ -13,6 +13,7 @@ import org.hibernate.service.spi.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
@@ -56,15 +57,12 @@ public class ClienteServiceImpl extends BaseServiceImpl<Cliente,Long> implements
             throw new Exception(e.getMessage());
         }
     }
-    @Transactional
-    @Override
-    public List<DTORankingClientes> searchRankingClientes(Date fecha1, Date fecha2) throws Exception {
-        {
-            try {
-                return clienteRepository.searchRankingClientes(fecha1, fecha2);
-            } catch (Exception e) {
-                throw new Exception(e.getMessage());
-            }
+    public List<Cliente> findClientesConMasPedidosEnRangoFechas (@DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date fechaInicio, @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date fechaFin) throws Exception {
+        try {
+            List<Cliente> clientes = clienteRepository.findClientesConMasPedidosEnRangoFechas(fechaInicio,fechaFin);
+            return clientes;
+        }catch(Exception e){
+            throw new Exception(e.getMessage());
         }
-
-    }}
+    }
+}

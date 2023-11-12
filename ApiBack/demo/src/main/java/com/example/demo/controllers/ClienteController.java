@@ -41,14 +41,22 @@ public class ClienteController extends BaseControllerImpl<Cliente, ClienteServic
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
         }
     }
-    @GetMapping("/searchRankingClientes")
-    public ResponseEntity<?> searchRankingClientes(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date fecha1,
-                                                   @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date fecha2) {
+    //Historia 27
+    @GetMapping("/obtenerClientesConMasPedidos")
+    public ResponseEntity<?> obtenerClientesConMasPedidosEnRangoFechas(
+            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date fechaInicio,
+            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date fechaFin
+    ) {
         try {
-            List<DTORankingClientes> rankingClientes = servicio.searchRankingClientes(fecha1, fecha2);
-            return ResponseEntity.status(HttpStatus.OK).body(rankingClientes);
+            List<Cliente> clientes = servicio.findClientesConMasPedidosEnRangoFechas(fechaInicio, fechaFin);
+            if (clientes.isEmpty()){
+                return  ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"No se encontraron clientes.\"}");
+            } else {
+                return ResponseEntity.status(HttpStatus.OK).body(clientes);
+            }
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\": \"" + e.getMessage() + "\"}");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"error\":\"" + e.getMessage() + "\"}");
         }
     }
 }

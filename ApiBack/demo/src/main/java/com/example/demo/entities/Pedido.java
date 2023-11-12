@@ -83,10 +83,9 @@ public class Pedido extends Base {
         this.pedidoDetalles=detallesPedido;
     }
 
-    @PrePersist
-    protected void onPersist() {
-        fechaPedido = new Date(System.currentTimeMillis());
-    }
-
+    @NotNull
+    @ManyToOne()
+    @JoinColumn(name = "id_cliente")
+    private Cliente cliente;
 
 }
