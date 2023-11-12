@@ -79,7 +79,7 @@ public interface PedidoRepository extends BaseRepository<Pedido, Long> {
             value = "SELECT c.nombre, c.apellido, c.telefono, d.calle, d.numero FROM Pedido p " +
                     "JOIN Domicilio d ON p.domicilio.id = d.id " +
                     "JOIN Cliente c ON p.cliente.id = c.id " +
-                    "WHERE p.estado = 'EN_CAMINO'",
+                    "WHERE p.estado = 'EN_CAMINO' AND p.tipo_envio = 'DELIVERY'",
             nativeQuery = true
     )
     List<Object[]> searchDelivery();

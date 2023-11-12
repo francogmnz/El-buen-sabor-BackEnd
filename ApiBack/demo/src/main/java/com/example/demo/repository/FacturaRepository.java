@@ -14,8 +14,13 @@ import java.util.List;
 @Repository
 
 public interface FacturaRepository extends BaseRepository<Factura, Long> {
-    // FALTA ESTA CLASE
-
-
-
+    //Consulta para la historia de usuario 18 "Generacion de Factura"
+    @Query(SELECT f, p, c, o
+            FROM Factura f
+            JOIN f.comprobante o
+            JOIN c.pedido p
+            JOIN p.cliente c
+            WHERE p.estado = 'PAGADO',
+    )
+    List<Factura> emitirFactura
 }

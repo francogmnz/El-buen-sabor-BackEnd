@@ -6,10 +6,7 @@ import com.example.demo.enums.EstadoPedido;
 import com.example.demo.enums.FormaPago;
 import com.example.demo.enums.TipoEnvio;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.math.BigDecimal;
@@ -23,6 +20,7 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
+@Builder
 public class Pedido extends Base {
 
     @NotNull
