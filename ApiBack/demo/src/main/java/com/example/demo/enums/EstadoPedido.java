@@ -1,8 +1,9 @@
 package com.example.demo.enums;
 
 public enum EstadoPedido {
-    PREPARACION ,
-    PENDIENTE_ENTREGA ,
+    A_COCINA ,
+    LISTO ,
+    A_CONFIRMAR,
     EN_CAMINO ,
     CANCELADO ,
     COMPLETADO ;
