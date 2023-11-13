@@ -13,8 +13,13 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
+
+    @Query(
+            value = "SELECT cliente.* , usuario.id as usuario_id, usuario.username as username, usuario.password as contraseña, usuario.auth0_id as auth0_id FROM cliente JOIN usuario ON usuario.id = cliente.id_usuario WHERE cliente.email = %:filtro1% AND usuario.password = %:filtro2%" ,
+            nativeQuery = true
+    )
+    Usuario comprobarUsuairo(@Param("filtro1")String filtro1, @Param("filtro2")String filtro2);
 
     List<Usuario> findByUsernameContaining(String username);
 

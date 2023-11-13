@@ -17,7 +17,7 @@ public class DetalleFacturaServiceImpl extends BaseServiceImpl<DetalleFactura,Lo
         super(baseRepository);
         this.detallefacturaRepository = detallefacturaRepository;
     }
-    @Override
+    /*@Override
     public List<DetalleFactura> search(int filtro) throws Exception {
         try {
             List<DetalleFactura> detallesfactura = detallefacturaRepository.searchNativo(filtro);
@@ -26,9 +26,9 @@ public class DetalleFacturaServiceImpl extends BaseServiceImpl<DetalleFactura,Lo
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
-    }
+    }*/
 
-    @Override
+    /*@Override
     public Page<DetalleFactura> search(int filtro, Pageable pageable) throws Exception {
         try {
             Page<DetalleFactura> detallefactura = detallefacturaRepository.searchNativo(filtro, pageable);
@@ -37,4 +37,5 @@ public class DetalleFacturaServiceImpl extends BaseServiceImpl<DetalleFactura,Lo
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
-    }}
+    }*/
+}

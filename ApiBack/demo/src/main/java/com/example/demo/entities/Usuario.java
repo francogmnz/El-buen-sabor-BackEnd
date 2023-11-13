@@ -11,9 +11,9 @@ import java.util.List;
 
 
 @Entity
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Table(name = "Usuario", uniqueConstraints = {@UniqueConstraint(columnNames = {"username", "email"})})
     public class Usuario extends Base implements UserDetails {
 

@@ -126,6 +126,46 @@
 					"response": []
 				},
 				{
+					"name": "search by name",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"fechaAlta\": null,\r\n        \"fechaBaja\": null,\r\n        \"fechaModificacion\": null,\r\n        \"nombre\": \"Luciana\",\r\n        \"apellido\": \"Suarez\",\r\n        \"telefono\": \"261588\",\r\n        \"email\": \"lucimaldonado12@gmail.com\",\r\n        \"usuario\": null,\r\n        \"domicilios\": [],\r\n        \"pedidos\": [],\r\n        \"id\": 1\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://Localhost:9000/api/v1/Cliente/searchByName?filtro=Maldonado",
+							"protocol": "http",
+							"host": [
+								"Localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"v1",
+								"Cliente",
+								"searchByName"
+							],
+							"query": [
+								{
+									"key": "filtro",
+									"value": "Maldonado"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Delete",
 					"request": {
 						"method": "DELETE",
@@ -317,6 +357,158 @@
 						}
 					},
 					"response": []
+				}
+			]
+		},
+		{
+			"name": "Queries personalizadas",
+			"item": [
+				{
+					"name": "Modulo 1 - Usuarios",
+					"item": [
+						{
+							"name": "HU-1 y 4 Registro",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n     \"auth0Id\": \"1\",\r\n    \"username\": \"Lucim\",\r\n    \"fechaAlta\": \"2023-10-18T23:05:10.568+00:00\",\r\n    \"fechaModificacion\": \"2023-10-18T23:05:10.568+00:00\",\r\n    \"fechaBaja\": \"2023-10-18T23:05:10.568+00:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9000/api/v1/Usuario",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"api",
+										"v1",
+										"Usuario"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "HU-2 y 5 Login",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9000/api/v1/Usuario/comprobarUsuario?filtro1=Lucim@gmail.com&filtro2=2307",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"api",
+										"v1",
+										"Usuario",
+										"comprobarUsuario"
+									],
+									"query": [
+										{
+											"key": "filtro1",
+											"value": "Lucim@gmail.com"
+										},
+										{
+											"key": "filtro2",
+											"value": "2307"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "HU-3 y 6 EditarDatos",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Lucha\",\r\n    \"apellido\": \"Aymar\",\r\n    \"telefono\": \"2615889045\",\r\n    \"email\": \"LaLucha@gmail.com\",\r\n    \"usuario\": null,\r\n    \"fechaAlta\": null,\r\n    \"fechaModificacion\": null,\r\n    \"fechaBaja\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9000/api/v1/Cliente/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"api",
+										"v1",
+										"Cliente",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "HU-7 y 8",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Lucha\",\r\n    \"apellido\": \"Aymar\",\r\n    \"telefono\": \"2615889045\",\r\n    \"email\": \"LaLucha@gmail.com\",\r\n    \"usuario\": null,\r\n    \"fechaAlta\": null,\r\n    \"fechaModificacion\": null,\r\n    \"fechaBaja\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9000/api/v1/Cliente/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"api",
+										"v1",
+										"Cliente",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		}

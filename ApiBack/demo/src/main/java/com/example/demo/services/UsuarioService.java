@@ -10,6 +10,8 @@ import java.util.List;
 
 @Service
 public interface UsuarioService extends BaseService<Usuario, Long>{
+
+    Usuario comprobarUsuario(String filtro1, String filtro2) throws Exception;
     List<Usuario> search(String filtro) throws Exception;
 
 }

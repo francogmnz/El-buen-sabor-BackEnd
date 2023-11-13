@@ -31,6 +31,16 @@ public class UsuarioServiceImpl extends BaseServiceImpl<Usuario, Long> implement
     }
 
     @Override
+    public Usuario comprobarUsuario (String filtro1, String filtro2) throws Exception {
+        try {
+            Usuario usuario = usuarioRepository.comprobarUsuairo(filtro1,filtro2);
+            return usuario;
+        } catch (Exception e) {
+            throw new Exception((e.getMessage()));
+        }
+    }
+
+    @Override
     public List<Usuario> search(String filtro) throws Exception {
         try {
             List<Usuario> usuarios = usuarioRepository.searchNativo(filtro);

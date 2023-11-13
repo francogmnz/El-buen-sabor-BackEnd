@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public interface DetalleFacturaRepository extends BaseRepository<DetalleFactura, Long> {
 
-    List<DetalleFactura> findByCantidadContaining(int cantidad);
+    /*List<DetalleFactura> findByCantidadContaining(int cantidad);
     Page<DetalleFactura> findByCantidadContaining(int cantidad, Pageable pageable);
 
     boolean existsBySubtotal(int subtotal);
@@ -32,6 +32,6 @@ public interface DetalleFacturaRepository extends BaseRepository<DetalleFactura,
             countQuery = "SELECT count(*) FROM detallefactura",
             nativeQuery = true
     )
-    Page<DetalleFactura> searchNativo(int filtro, Pageable pageable);
+    Page<DetalleFactura> searchNativo(int filtro, Pageable pageable);*/
 
 }

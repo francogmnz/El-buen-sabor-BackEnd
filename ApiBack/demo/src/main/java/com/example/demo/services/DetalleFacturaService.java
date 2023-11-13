@@ -10,7 +10,7 @@ import java.util.List;
 
 @Service
 public interface DetalleFacturaService extends BaseService<DetalleFactura,Long>{
-    List<DetalleFactura> search(int filtro) throws Exception;
-    Page<DetalleFactura> search(int filtro, Pageable pageable) throws Exception;
+    //List<DetalleFactura> search(int filtro) throws Exception;
+    //Page<DetalleFactura> search(int filtro, Pageable pageable) throws Exception;
 
 }

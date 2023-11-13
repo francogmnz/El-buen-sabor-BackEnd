@@ -11,6 +11,16 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "*")
 @RequestMapping(path = "api/v1/u")
 public class UsuarioController extends BaseControllerImpl<Usuario, UsuarioServiceImpl>{
+
+    @GetMapping("/comprobarUsuario")
+    public ResponseEntity<?> comprobarUsuario(String filtro1, String filtro2) {
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.comprobarUsuario(filtro1, filtro2));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
+        }
+    }
+
     @GetMapping("/search")
     public ResponseEntity<?> search(@RequestParam String filtro) {
         try {
