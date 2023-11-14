@@ -47,4 +47,10 @@ public class ClienteServiceImpl extends BaseServiceImpl<Cliente,Long> implements
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
-    }}
+    }
+
+    @Override
+    public List<Cliente> findAll() throws Exception {
+        return null;
+    }
+}

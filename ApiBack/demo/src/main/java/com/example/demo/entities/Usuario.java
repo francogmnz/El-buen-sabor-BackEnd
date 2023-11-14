@@ -14,6 +14,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Getter
+@Setter
 @Table(name = "Usuario", uniqueConstraints = {@UniqueConstraint(columnNames = {"username", "email"})})
     public class Usuario extends Base implements UserDetails {
 

@@ -40,8 +40,7 @@ public class Producto extends Base {
     @Column(length = 500, name = "url_imagen")
     private String urlImagen;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_receta")
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     private Receta receta;
 
     @ManyToOne(optional = false)

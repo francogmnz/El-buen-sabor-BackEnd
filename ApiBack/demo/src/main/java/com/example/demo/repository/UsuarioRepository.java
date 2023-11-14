@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @Repository
 
-public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
+public interface UsuarioRepository extends BaseRepository<Usuario, Long> {
 
     List<Usuario> findByUsernameContaining(String username);
 
@@ -24,17 +24,17 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
 
 
     //Anotación JPQL parametros indexados
-    @Query(value = "SELECT u FROM Usuario u WHERE u.username LIKE '%?1%'")
-    List<Usuario> search(String filtro);
+    @Query(value = "SELECT u FROM Usuario u WHERE u.username = :filtro")
+    List<Usuario> search(@Param("filtro")String filtro);
     @Query(value = "SELECT u FROM Usuario u WHERE u.username LIKE '%?1%'")
     Page<Usuario> search(String filtro, Pageable pageable);
 
     //Anotación
     @Query(
-            value = "SELECT * FROM usuario WHERE usuario.username LIKE '%?1%'",
+            value = "SELECT * FROM usuario WHERE usuario.username = :username",
             nativeQuery = true
     )
-    List<Usuario> searchNativo(String filtro);
+    List<Usuario> searchNativo(@Param("username") String filtro);
     @Query(
             value = "SELECT * FROM usuario WHERE usuario.username LIKE '%?1%'",
             countQuery = "SELECT count(*) FROM usario",

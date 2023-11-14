@@ -22,23 +22,10 @@ public class RecetaServiceImpl extends BaseServiceImpl<Receta,Long> implements R
         this.recetaRepository = recetaRepository;
     }
 
+
+    @Override
     public List<Receta> search(int filtro) throws Exception {
-        try {
-            List<Receta> receta = recetaRepository.searchNativo(filtro);
-
-            return receta;
-        } catch (Exception e) {
-            throw new Exception(e.getMessage());
-        }
-    }
-    public List<Receta> searchO(int filtro) throws Exception {
-        try {
-            List<Receta> receta = recetaRepository.searchOne(filtro);
-
-            return receta;
-        } catch (Exception e) {
-            throw new Exception(e.getMessage());
-        }
+        return null;
     }
 
     public Page<Receta> search(int filtro, Pageable pageable) throws Exception {
