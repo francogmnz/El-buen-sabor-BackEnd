@@ -31,7 +31,7 @@ public class SecurityConfig{
                                 .disable())
                 .authorizeHttpRequests(authRequest ->
                                 authRequest
-                                        .requestMatchers(new AntPathRequestMatcher("/auth/**")).permitAll()
+                                        .requestMatchers(new AntPathRequestMatcher("/**")).permitAll()
                                         .requestMatchers(new AntPathRequestMatcher(PathRequest.toH2Console().toString())).permitAll()
                                         .requestMatchers(new AntPathRequestMatcher("/**")).hasAuthority("ADMIN")
                                         .requestMatchers(new AntPathRequestMatcher("/api/v1/u/**")).hasAnyAuthority("CLIENTE")

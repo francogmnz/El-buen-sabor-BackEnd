@@ -43,6 +43,7 @@ public abstract class BaseControllerImpl<E extends Base, S extends BaseServiceIm
     @PostMapping("")
     public ResponseEntity<?> save(@RequestBody E entity){
         try{
+            System.out.println(entity);
             return ResponseEntity.status(HttpStatus.OK).body(servicio.save(entity));
         } catch (Exception e){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"error\":\"Error, por favor intente mas tarde.\"}");

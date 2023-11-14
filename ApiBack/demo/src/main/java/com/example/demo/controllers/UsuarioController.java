@@ -14,6 +14,7 @@ public class UsuarioController extends BaseControllerImpl<Usuario, UsuarioServic
     @GetMapping("/search")
     public ResponseEntity<?> search(@RequestParam String filtro) {
         try {
+            System.out.println(filtro);
             return ResponseEntity.status(HttpStatus.OK).body(servicio.search(filtro));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
@@ -23,6 +24,7 @@ public class UsuarioController extends BaseControllerImpl<Usuario, UsuarioServic
     @GetMapping("/searchPaged")
     public ResponseEntity<?> search(@RequestParam String filtro, Pageable pageable) {
         try {
+            System.out.printf("Estoy en el paged");
             return ResponseEntity.status(HttpStatus.OK).body(servicio.search(filtro, pageable));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));

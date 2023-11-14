@@ -11,7 +11,6 @@ import java.util.List;
 @Service
 public interface RecetaService extends BaseService<Receta, Long>{
     List<Receta> search(int filtro) throws Exception;
-    List<Receta> searchO(int filtro) throws Exception;
     Page<Receta> search(int filtro, Pageable pageable) throws Exception;
 
 }

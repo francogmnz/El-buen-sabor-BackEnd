@@ -18,14 +18,6 @@ import java.util.Date;
 public class Receta extends Base{
 
     @NotNull
-    @Column(name = "numReceta")
-    private int numReceta;
-
-    @NotNull
-    @Column(name = "descripcionReceta")
-    private String descripcionReceta;
-
-    @NotNull
     @Column(name = "nombreReceta")
     private String nombreReceta;
 

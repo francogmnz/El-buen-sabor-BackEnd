@@ -21,25 +21,4 @@ public class Base implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID;
 
-    @Column(name = "fecha_alta")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Timestamp fechaAlta;
-    private Date fechaBaja;
-    private Timestamp fechaModificacion;
-
-
-    @PrePersist
-    protected void onCreate() {
-        fechaModificacion = new Timestamp(new Date().getTime());
-    }
-
-    @PreUpdate
-    protected void onUpdate() {
-        fechaModificacion = new Timestamp(new Date().getTime());
-    }
-
-    @PreRemove
-    protected void onRemove() {
-        fechaBaja = new Timestamp(new Date().getTime());
-    }
 }

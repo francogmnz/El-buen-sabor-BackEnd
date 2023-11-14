@@ -16,25 +16,15 @@ import java.util.List;
 
 @Repository
 public interface RecetaRepository extends BaseRepository<Receta, Long> {
-    List<Pedido> findByNumRecetaContaining(int numReceta);
 
-    Page<Pedido> findByNumRecetaContaining(int numReceta, Pageable pageable);
+
+
 
     boolean existsByNombreReceta(String nombreReceta);
 
-    //Anotación
+
     @Query(
-            value = "SELECT * FROM Receta WHERE Receta.num_receta = :filtro ",
-            nativeQuery = true
-    )
-    List<Receta> searchNativo(@Param("filtro") int filtro);
-    @Query(
-            value = "SELECT * FROM Receta WHERE Receta.num_receta = :filtro ",
-            nativeQuery = true
-    )
-    List<Receta> searchOne(@Param("filtro") int filtro);
-    @Query(
-            value = "SELECT * FROM Receta WHERE Receta.num_receta LIKE '%?1%'",
+            value = "SELECT * FROM Receta WHERE Receta.id LIKE '%?1%'",
             countQuery = "SELECT count(*) FROM Receta",
             nativeQuery = true
     )

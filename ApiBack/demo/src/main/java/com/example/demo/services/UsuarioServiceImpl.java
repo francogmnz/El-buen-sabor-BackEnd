@@ -15,20 +15,13 @@ import java.util.List;
 
 @Service
 public class UsuarioServiceImpl extends BaseServiceImpl<Usuario, Long> implements UsuarioService{
-
-
     @Autowired
-    public UsuarioServiceImpl(UsuarioRepository usuarioRepository) {
-        this.usuarioRepository = usuarioRepository;
-    }
-
-
     private UsuarioRepository usuarioRepository;
 
     public UsuarioServiceImpl(BaseRepository<Usuario, Long> baseRepository) {
-
         super(baseRepository);
     }
+
 
     @Override
     public List<Usuario> search(String filtro) throws Exception {
