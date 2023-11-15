@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping(path = "api/v1/u.ca")
+@RequestMapping(path = "api/v1/u.ca/DetalleFactura")
 public class DetalleFacturaController extends BaseControllerImpl<DetalleFactura, DetalleFacturaServiceImpl> {
     @GetMapping("/search")
     public ResponseEntity<?> search(@RequestParam int filtro) {

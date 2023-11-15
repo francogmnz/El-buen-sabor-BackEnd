@@ -36,7 +36,7 @@ public class ApiFarquardApplication {
 					.costo(BigDecimal.valueOf(3000))
 					.precioVenta(BigDecimal.valueOf(4500))
 					.tiempoEstimadoCocina(45)
-					.urlImagen("https://www.freepik.es/foto-gratis/hamburguesa-espeluznante-ciudad_74564251.htm#query=Habirguesa%20mosntruo&position=6&from_view=search&track=ais&uuid=307bf32f-344b-4d03-b6f8-9ae31e464c0c")
+					.urlImagen("https://www.pequerecetas.com/wp-content/uploads/2013/07/hamburguesas-caseras-receta.jpg")
 					.descripcion("Inigualable pan con semillas de sésamo, tres medallones de carne 100% vacuna, tres fetas de nuestro exclusivo Queso Cheddar, cebolla, lechuga y tomate frescos. Sumado a estos ingredientes la única e inigualable Salsa Tasty")
 					.denominacion("Grand Tasty Turbo Bacon Triple").
 					build();

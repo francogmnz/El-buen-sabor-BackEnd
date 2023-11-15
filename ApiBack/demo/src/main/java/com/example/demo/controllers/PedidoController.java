@@ -14,7 +14,7 @@ import java.util.Date;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping(path = "api/v1/e")
+@RequestMapping(path = "api/v1/e/Pedido")
 public class PedidoController extends BaseControllerImpl<Pedido, PedidoServiceImpl>{
     @GetMapping("/search")
     public ResponseEntity<?> search(@RequestParam Date filtro) {

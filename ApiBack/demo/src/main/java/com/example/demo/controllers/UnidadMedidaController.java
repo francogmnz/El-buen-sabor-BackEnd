@@ -12,7 +12,7 @@ import com.example.demo.services.UnidadMedidaServiceImpl;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping(path = "/ADMIN")
+@RequestMapping(path = "/ADMIN/UnidadMedida")
 public class UnidadMedidaController extends BaseControllerImpl<UnidadMedida, UnidadMedidaServiceImpl>{
 
     @GetMapping("/search")

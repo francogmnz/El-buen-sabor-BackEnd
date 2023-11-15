@@ -16,7 +16,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping(path = "api/v1/e")
+@RequestMapping(path = "api/v1/e/Producto")
 public class ProductoController extends BaseControllerImpl<Producto, ProductoServiceImpl>{
 
     @GetMapping(path = "/search")
