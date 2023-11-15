@@ -30,10 +30,7 @@ public class Pedido extends Base {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaPedido;
 
-    @NotNull
-    @Column(name = "hora_estimada_finalizacion")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date horaEstimadaFinalizacion;
+
 
     @NotNull
     @Column(name = "total", precision = 10, scale = 2)
@@ -72,9 +69,7 @@ public class Pedido extends Base {
     @JoinColumn(name="id_detalle_pedido")
     private List<DetallePedido> detallePedido;
 
-    @ManyToOne
-    @JoinColumn(name = "id_comprobante")
-    private Comprobante comprobante;
+
 
     @PrePersist
     protected void onPersist() {
