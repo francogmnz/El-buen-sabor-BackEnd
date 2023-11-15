@@ -33,11 +33,13 @@ public class SecurityConfig{
                                 authRequest
                                         .requestMatchers(new AntPathRequestMatcher("/**")).permitAll()
                                         .requestMatchers(new AntPathRequestMatcher(PathRequest.toH2Console().toString())).permitAll()
-                                        .requestMatchers(new AntPathRequestMatcher("/api/v1/a/**")).hasAuthority("ADMIN")
-                                        .requestMatchers(new AntPathRequestMatcher("/api/v1/u/**")).hasAnyAuthority("CLIENTE","ADMIN")
-                                        .requestMatchers(new AntPathRequestMatcher("/api/v1/co/**")).hasAnyAuthority("COCINERO","ADMIN")
-                                        .requestMatchers(new AntPathRequestMatcher("/api/v1/d/**")).hasAnyAuthority("REPARTIDOR","ADMIN")
-                                        .requestMatchers(new AntPathRequestMatcher("/api/v1/ca/**")).hasAnyAuthority("CAJERO","ADMIN")
+                                        .requestMatchers(new AntPathRequestMatcher("/**")).hasAuthority("ADMIN")
+                                        .requestMatchers(new AntPathRequestMatcher("/api/v1/u/**")).hasAnyAuthority("CLIENTE")
+                                        .requestMatchers(new AntPathRequestMatcher("/api/v1/co/**")).hasAnyAuthority("COCINERO")
+                                        .requestMatchers(new AntPathRequestMatcher("/api/v1/u.d/**")).hasAnyAuthority("REPARTIDOR","CLIENTE")
+                                        .requestMatchers(new AntPathRequestMatcher("/api/v1/u.ca/**")).hasAnyAuthority("CAJERO","CLIENTE")
+                                        .requestMatchers(new AntPathRequestMatcher("/api/v1/u.co/**")).hasAnyAuthority("COCINERO","CLIENTE")
+                                        .requestMatchers(new AntPathRequestMatcher("/api/v1/e/**")).hasAnyAuthority("COCINERO","CLIENTE","REPARTIDOR","CAJERO")
                         //.anyRequest().authenticated()
                 )
                 .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable)) //H2

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping(path = "api/v1/RubroIngrediente")
+@RequestMapping(path = "/ADMIN")
 public class RubroIngredienteController extends BaseControllerImpl<RubroIngrediente, RubroIngredienteServiceImpl>{
  @GetMapping("/search")
  public ResponseEntity<?> search(@RequestParam String filtro) {
