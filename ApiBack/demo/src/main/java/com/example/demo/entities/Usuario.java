@@ -38,6 +38,7 @@ import java.util.List;
         return List.of(new SimpleGrantedAuthority((rol.name())));
     }
 
+    public Long getId(){return super.getID();}
     @Override
     public String getPassword() {
         return password;
