@@ -35,7 +35,7 @@ import java.util.List;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority((rol.name())));
+        return List.of(new SimpleGrantedAuthority((rol.toString())));
     }
 
     public Long getId(){return super.getID();}

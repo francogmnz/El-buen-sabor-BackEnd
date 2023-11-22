@@ -1,9 +1,12 @@
 package com.example.demo.services;
 
+import com.example.demo.dtos.DTOPedido;
+import com.example.demo.dtos.ProductosMasVendidosDTO;
 import com.example.demo.entities.Ingrediente;
 import com.example.demo.entities.OrdenCompra;
 import com.example.demo.entities.Pedido;
 import com.example.demo.entities.Receta;
+import com.example.demo.enums.TipoEnvio;
 import com.example.demo.repository.BaseRepository;
 import com.example.demo.repository.OrdenCompraRepository;
 import com.example.demo.repository.PedidoRepository;
@@ -15,6 +18,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 @Service
@@ -109,6 +115,30 @@ public class PedidoServiceImpl extends BaseServiceImpl<Pedido,Long> implements P
         try {
              pedidoRepository.entregaDelivery();
 
+
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+
+    @Transactional
+    public Object searchPedidos(Long id) throws Exception {
+        try {
+            List<Object[]> results = pedidoRepository.searchPedidos(id);
+            List<DTOPedido> dtos = new ArrayList<>();
+
+            for (Object[] result : results) {
+                Long nro = (Long) result[0];
+                BigDecimal total = (BigDecimal) result[1];
+                SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+                String fechaPedido = formato.format(result[2]);
+                String estado = (String) result[3];
+                String estadoPago = (String) result[4];
+                String tipoEnvio = (String) result[5];
+                String formaPago = (String) result[6];
+                dtos.add(new DTOPedido(nro, total, fechaPedido, estado, estadoPago, tipoEnvio,formaPago));
+            }
+            return dtos;
 
         } catch (Exception e) {
             throw new Exception(e.getMessage());

@@ -31,6 +31,7 @@ public class AuthService {
         return AuthResponse.builder()
             .token(token)
             .id(usuario.getId())
+            .rol(usuario.getAuthorities().toString())
             .build();
 
     }
@@ -40,9 +41,30 @@ public class AuthService {
                 .username(request.getUsername())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .firstname(request.getFirstname())
+                .lastname(request.getLastname())
+                .email(request.getEmail())
+                .rol(Rol.valueOf(request.getRol()))
+                .build();
+
+        userRepository.save(user);
+
+        Usuario usuario = userRepository.findByUsername(user.getUsername()).orElseThrow();
+
+        return AuthResponse.builder()
+                .token(jwtService.getToken(user))
+                .id(usuario.getId())  // Incluye el ID en la respuesta
+                .rol(usuario.getRol().toString())
+                .build();
+    }
+
+    public AuthResponse registerEmployee(RegisterRequestEmployee request) {
+        Usuario user = Usuario.builder()
+                .username(request.getUsername())
+                .password(passwordEncoder.encode(request.getPassword()))
+                .firstname(request.getFirstname())
                 .lastname(request.getLastname())  // Asegúrate de corregir el nombre del campo
                 .email(request.getEmail())
-                .rol(Rol.CLIENTE)
+                .rol(Rol.valueOf(request.getRol()))
                 .build();
 
         userRepository.save(user);

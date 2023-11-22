@@ -1,10 +1,7 @@
 package com.example.demo.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -16,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
+@Builder
 public class Cliente extends Base {
 
     @Column(name = "nombre")
@@ -34,12 +32,13 @@ public class Cliente extends Base {
     @JoinColumn(name = "id_usuario")
     private Usuario usuario;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_domicilio")
     private List<Domicilio> domicilios = new ArrayList<Domicilio>();
 
-    @OneToMany (cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn (name = "id_pedido")
+    @OneToMany (cascade = CascadeType.ALL)
+    @JoinColumn (name = "id_cliente")
     private List<Pedido> pedidos = new ArrayList<Pedido>();
+
 
 }

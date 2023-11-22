@@ -1,5 +1,6 @@
 package com.example.demo.repository;
 
+import com.example.demo.dtos.DTOPedido;
 import com.example.demo.entities.OrdenCompra;
 import com.example.demo.entities.Pedido;
 
@@ -92,6 +93,11 @@ public interface PedidoRepository extends BaseRepository<Pedido, Long> {
     void entregaDelivery();
 
 
-
-
+    @Query(
+            value = "SELECT p.id, p.total, p.fecha_pedido, p.estado, p.estado_pago, p.tipo_envio, " +
+                    "p.forma_pago FROM Pedido p JOIN Cliente c ON p.id_cliente = c.id " +
+                    "JOIN Usuario u ON c.id_usuario = u.id WHERE u.id = :id ",
+            nativeQuery = true
+    )
+    List <Object[]> searchPedidos(@Param("id")Long id);
 }

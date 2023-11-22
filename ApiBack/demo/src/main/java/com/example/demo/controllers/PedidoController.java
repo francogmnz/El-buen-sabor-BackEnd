@@ -24,6 +24,14 @@ public class PedidoController extends BaseControllerImpl<Pedido, PedidoServiceIm
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
         }
     }
+    @GetMapping("/user/{id}")
+    public ResponseEntity<?> search(@PathVariable Long id) {
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.searchPedidos(id));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
+        }
+    }
 
     @GetMapping("/search/status/pending")
     public ResponseEntity<?> searchpending(@PageableDefault(page = 0, size = 10)Pageable pageable) {
@@ -74,7 +82,6 @@ public class PedidoController extends BaseControllerImpl<Pedido, PedidoServiceIm
     @GetMapping("/pedidoDelivery")
     public ResponseEntity<?> pedidoDelivery() {
         try {
-            System.out.println("PedidoDelivery Andando");
             return ResponseEntity.status(HttpStatus.OK).body(servicio.pedidoDelivery());
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
